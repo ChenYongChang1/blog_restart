@@ -1,0 +1,1353 @@
+{
+  "id": "2018943",
+  "name": "Dian Index",
+  "font_family": "iconfont",
+  "css_prefix_text": "Dian",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "18319055",
+      "name": "网易考拉",
+      "font_class": "bianzu2",
+      "unicode": "e6c3",
+      "unicode_decimal": 59075
+    },
+    {
+      "icon_id": "18319056",
+      "name": "唯品会",
+      "font_class": "bianzu4",
+      "unicode": "e6c4",
+      "unicode_decimal": 59076
+    },
+    {
+      "icon_id": "18319057",
+      "name": "苏宁易购",
+      "font_class": "bianzu5",
+      "unicode": "e6c5",
+      "unicode_decimal": 59077
+    },
+    {
+      "icon_id": "18319058",
+      "name": "洋码头",
+      "font_class": "bianzu7",
+      "unicode": "e6c6",
+      "unicode_decimal": 59078
+    },
+    {
+      "icon_id": "18319059",
+      "name": "小店",
+      "font_class": "bianzu6",
+      "unicode": "e6c7",
+      "unicode_decimal": 59079
+    },
+    {
+      "icon_id": "17930158",
+      "name": "实时榜单",
+      "font_class": "shishibangdan",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "17927344",
+      "name": "返回顶部",
+      "font_class": "arrow-upward-outline",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "17883584",
+      "name": "播放",
+      "font_class": "bofang1",
+      "unicode": "e6c2",
+      "unicode_decimal": 59074
+    },
+    {
+      "icon_id": "17788499",
+      "name": "邮件",
+      "font_class": "youjian1",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "17788500",
+      "name": "电话",
+      "font_class": "dianhua1",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "17788489",
+      "name": "微信-grey",
+      "font_class": "weixin-grey",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "17784960",
+      "name": "应用",
+      "font_class": "yingyong5",
+      "unicode": "e6bd",
+      "unicode_decimal": 59069
+    },
+    {
+      "icon_id": "17784961",
+      "name": "平台账号",
+      "font_class": "pingtaizhanghao",
+      "unicode": "e6be",
+      "unicode_decimal": 59070
+    },
+    {
+      "icon_id": "17784962",
+      "name": "热门直播",
+      "font_class": "remenzhibo",
+      "unicode": "e6bf",
+      "unicode_decimal": 59071
+    },
+    {
+      "icon_id": "17784963",
+      "name": "名人堂",
+      "font_class": "mingrentang1",
+      "unicode": "e6c0",
+      "unicode_decimal": 59072
+    },
+    {
+      "icon_id": "17784964",
+      "name": "资讯舆情",
+      "font_class": "zixunyuqing",
+      "unicode": "e6c1",
+      "unicode_decimal": 59073
+    },
+    {
+      "icon_id": "17782410",
+      "name": "安卓",
+      "font_class": "anzhuo1",
+      "unicode": "e6bc",
+      "unicode_decimal": 59068
+    },
+    {
+      "icon_id": "17752482",
+      "name": "更新",
+      "font_class": "gengxin1",
+      "unicode": "e6bb",
+      "unicode_decimal": 59067
+    },
+    {
+      "icon_id": "17713905",
+      "name": "谷歌-grey",
+      "font_class": "guge-grey1",
+      "unicode": "e6b9",
+      "unicode_decimal": 59065
+    },
+    {
+      "icon_id": "17713906",
+      "name": "谷歌-white",
+      "font_class": "guge-white",
+      "unicode": "e6ba",
+      "unicode_decimal": 59066
+    },
+    {
+      "icon_id": "17701409",
+      "name": "账号密码",
+      "font_class": "zhanghaomima",
+      "unicode": "e6b7",
+      "unicode_decimal": 59063
+    },
+    {
+      "icon_id": "17701410",
+      "name": "扫二维码",
+      "font_class": "saoerweima",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
+      "icon_id": "17408404",
+      "name": "抖音-主播",
+      "font_class": "douyin-zhubo",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "17408405",
+      "name": "抖音-销售",
+      "font_class": "douyin-xiaoshou",
+      "unicode": "e6b5",
+      "unicode_decimal": 59061
+    },
+    {
+      "icon_id": "17408406",
+      "name": "抖音-视频",
+      "font_class": "douyin-shipin",
+      "unicode": "e6b6",
+      "unicode_decimal": 59062
+    },
+    {
+      "icon_id": "17034360",
+      "name": "删除",
+      "font_class": "shanchu1",
+      "unicode": "e6b3",
+      "unicode_decimal": 59059
+    },
+    {
+      "icon_id": "16999071",
+      "name": "隐藏密码",
+      "font_class": "yincangmima",
+      "unicode": "e6b2",
+      "unicode_decimal": 59058
+    },
+    {
+      "icon_id": "16999040",
+      "name": "子项",
+      "font_class": "zixiang",
+      "unicode": "e6b0",
+      "unicode_decimal": 59056
+    },
+    {
+      "icon_id": "16999041",
+      "name": "疑问-grey",
+      "font_class": "yiwen-grey",
+      "unicode": "e6b1",
+      "unicode_decimal": 59057
+    },
+    {
+      "icon_id": "16999002",
+      "name": "密码-白",
+      "font_class": "mima-bai",
+      "unicode": "e6ac",
+      "unicode_decimal": 59052
+    },
+    {
+      "icon_id": "16999003",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "16999004",
+      "name": "账号-白",
+      "font_class": "zhanghao-bai",
+      "unicode": "e6ae",
+      "unicode_decimal": 59054
+    },
+    {
+      "icon_id": "16999005",
+      "name": "显示密码",
+      "font_class": "xianshimima",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    },
+    {
+      "icon_id": "16998455",
+      "name": "博主",
+      "font_class": "bozhu1",
+      "unicode": "e6a3",
+      "unicode_decimal": 59043
+    },
+    {
+      "icon_id": "16998456",
+      "name": "画像",
+      "font_class": "huaxiang",
+      "unicode": "e6a4",
+      "unicode_decimal": 59044
+    },
+    {
+      "icon_id": "16998457",
+      "name": "分析",
+      "font_class": "fenxi",
+      "unicode": "e6a5",
+      "unicode_decimal": 59045
+    },
+    {
+      "icon_id": "16998458",
+      "name": "监控",
+      "font_class": "jiankong",
+      "unicode": "e6a6",
+      "unicode_decimal": 59046
+    },
+    {
+      "icon_id": "16998459",
+      "name": "商品",
+      "font_class": "shangpin",
+      "unicode": "e6a7",
+      "unicode_decimal": 59047
+    },
+    {
+      "icon_id": "16998460",
+      "name": "加入资源",
+      "font_class": "jiaruziyuan",
+      "unicode": "e6a8",
+      "unicode_decimal": 59048
+    },
+    {
+      "icon_id": "16998461",
+      "name": "诊断",
+      "font_class": "zhenduan",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
+      "icon_id": "16998462",
+      "name": "舆情",
+      "font_class": "yuqing1",
+      "unicode": "e6aa",
+      "unicode_decimal": 59050
+    },
+    {
+      "icon_id": "16998463",
+      "name": "微博",
+      "font_class": "weibo2",
+      "unicode": "e6ab",
+      "unicode_decimal": 59051
+    },
+    {
+      "icon_id": "16998324",
+      "name": "进入",
+      "font_class": "jinru",
+      "unicode": "e69f",
+      "unicode_decimal": 59039
+    },
+    {
+      "icon_id": "16998325",
+      "name": "进入-白",
+      "font_class": "jinru-bai",
+      "unicode": "e6a0",
+      "unicode_decimal": 59040
+    },
+    {
+      "icon_id": "16998326",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e6a1",
+      "unicode_decimal": 59041
+    },
+    {
+      "icon_id": "16998327",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e6a2",
+      "unicode_decimal": 59042
+    },
+    {
+      "icon_id": "16998315",
+      "name": "单选-选中",
+      "font_class": "danxuan-xuanzhong",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
+      "icon_id": "16998316",
+      "name": "单选-未选",
+      "font_class": "danxuan-weixuan",
+      "unicode": "e697",
+      "unicode_decimal": 59031
+    },
+    {
+      "icon_id": "16998317",
+      "name": "电话",
+      "font_class": "dianhua",
+      "unicode": "e698",
+      "unicode_decimal": 59032
+    },
+    {
+      "icon_id": "16998318",
+      "name": "个人",
+      "font_class": "geren",
+      "unicode": "e699",
+      "unicode_decimal": 59033
+    },
+    {
+      "icon_id": "16998319",
+      "name": "刷新-白",
+      "font_class": "shuaxin-bai",
+      "unicode": "e69a",
+      "unicode_decimal": 59034
+    },
+    {
+      "icon_id": "16998320",
+      "name": "复制",
+      "font_class": "fuzhi",
+      "unicode": "e69b",
+      "unicode_decimal": 59035
+    },
+    {
+      "icon_id": "16998321",
+      "name": "公司",
+      "font_class": "gongsi",
+      "unicode": "e69c",
+      "unicode_decimal": 59036
+    },
+    {
+      "icon_id": "16998322",
+      "name": "编辑-blue",
+      "font_class": "bianji-blue",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
+      "icon_id": "16998323",
+      "name": "邮件",
+      "font_class": "youjian",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    },
+    {
+      "icon_id": "16998120",
+      "name": "待支付订单",
+      "font_class": "daizhifudingdan",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "16998121",
+      "name": "会员购买",
+      "font_class": "huiyuangoumai",
+      "unicode": "e692",
+      "unicode_decimal": 59026
+    },
+    {
+      "icon_id": "16998122",
+      "name": "联系地址",
+      "font_class": "lianxidizhi",
+      "unicode": "e693",
+      "unicode_decimal": 59027
+    },
+    {
+      "icon_id": "16998123",
+      "name": "失效订单",
+      "font_class": "shixiaodingdan",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "16998124",
+      "name": "服务充值",
+      "font_class": "fuwuchongzhi",
+      "unicode": "e695",
+      "unicode_decimal": 59029
+    },
+    {
+      "icon_id": "16997946",
+      "name": "发票管理",
+      "font_class": "fapiaoguanli1",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "16997947",
+      "name": "个人信息",
+      "font_class": "gerenxinxi1",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "16997948",
+      "name": "充值",
+      "font_class": "chongzhi",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "16997949",
+      "name": "安全管理",
+      "font_class": "anquanguanli1",
+      "unicode": "e676",
+      "unicode_decimal": 58998
+    },
+    {
+      "icon_id": "16997950",
+      "name": "个人中心",
+      "font_class": "gerenzhongxin1",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "16997951",
+      "name": "子账号管理",
+      "font_class": "zizhanghaoguanli",
+      "unicode": "e688",
+      "unicode_decimal": 59016
+    },
+    {
+      "icon_id": "16997952",
+      "name": "我的监控",
+      "font_class": "wodejiankong1",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "16997953",
+      "name": "消息管理",
+      "font_class": "xiaoxiguanli1",
+      "unicode": "e68a",
+      "unicode_decimal": 59018
+    },
+    {
+      "icon_id": "16997954",
+      "name": "购买记录",
+      "font_class": "goumaijilu1",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "16997955",
+      "name": "我的关注",
+      "font_class": "wodeguanzhu1",
+      "unicode": "e68c",
+      "unicode_decimal": 59020
+    },
+    {
+      "icon_id": "16997956",
+      "name": "订单管理",
+      "font_class": "dingdanguanli1",
+      "unicode": "e68d",
+      "unicode_decimal": 59021
+    },
+    {
+      "icon_id": "16997957",
+      "name": "权限管理",
+      "font_class": "quanxianguanli1",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "16997958",
+      "name": "退出登录",
+      "font_class": "tuichudenglu1",
+      "unicode": "e68f",
+      "unicode_decimal": 59023
+    },
+    {
+      "icon_id": "16997959",
+      "name": "基本资料",
+      "font_class": "jibenziliao1",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "16997917",
+      "name": "公众号",
+      "font_class": "gongzhonghao3",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "16997918",
+      "name": "抖音号",
+      "font_class": "douyinhao1",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "16997919",
+      "name": "微博主",
+      "font_class": "weibozhu1",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "16997920",
+      "name": "小红书",
+      "font_class": "xiaohongshu2",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "16997921",
+      "name": "应用",
+      "font_class": "yingyong4",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
+      "icon_id": "16997922",
+      "name": "快手号",
+      "font_class": "kuaishouhao1",
+      "unicode": "e660",
+      "unicode_decimal": 58976
+    },
+    {
+      "icon_id": "16961202",
+      "name": "我的关注",
+      "font_class": "wodeguanzhu",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "16961203",
+      "name": "我的监控",
+      "font_class": "wodejiankong",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "16937039",
+      "name": "品牌",
+      "font_class": "pinpai",
+      "unicode": "e686",
+      "unicode_decimal": 59014
+    },
+    {
+      "icon_id": "16936887",
+      "name": "下拉",
+      "font_class": "bianzubeifen11",
+      "unicode": "e680",
+      "unicode_decimal": 59008
+    },
+    {
+      "icon_id": "16936748",
+      "name": "回收",
+      "font_class": "huishou1",
+      "unicode": "e687",
+      "unicode_decimal": 59015
+    },
+    {
+      "icon_id": "16923091",
+      "name": "敬请期待-快手",
+      "font_class": "jingqingqidai-kuaishou",
+      "unicode": "e685",
+      "unicode_decimal": 59013
+    },
+    {
+      "icon_id": "16907077",
+      "name": "微博",
+      "font_class": "weibobeifen3",
+      "unicode": "e684",
+      "unicode_decimal": 59012
+    },
+    {
+      "icon_id": "16906285",
+      "name": "券后价",
+      "font_class": "quanhoujia",
+      "unicode": "e683",
+      "unicode_decimal": 59011
+    },
+    {
+      "icon_id": "16906233",
+      "name": "淘宝",
+      "font_class": "taobao",
+      "unicode": "e681",
+      "unicode_decimal": 59009
+    },
+    {
+      "icon_id": "16906234",
+      "name": "京东",
+      "font_class": "taobaobeifen",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "16902243",
+      "name": "添加",
+      "font_class": "tianjia",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "16898495",
+      "name": "向左",
+      "font_class": "xiangzuo",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "16898496",
+      "name": "向右",
+      "font_class": "xiangyou",
+      "unicode": "e67d",
+      "unicode_decimal": 59005
+    },
+    {
+      "icon_id": "16893756",
+      "name": "公众号",
+      "font_class": "gongzhonghao2",
+      "unicode": "e675",
+      "unicode_decimal": 58997
+    },
+    {
+      "icon_id": "16893758",
+      "name": "小程序",
+      "font_class": "xiaochengxu1",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    },
+    {
+      "icon_id": "16893759",
+      "name": "应用",
+      "font_class": "yingyong3",
+      "unicode": "e678",
+      "unicode_decimal": 59000
+    },
+    {
+      "icon_id": "16893760",
+      "name": "抖音",
+      "font_class": "douyin1",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "16893761",
+      "name": "快手",
+      "font_class": "kuaishou1",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    },
+    {
+      "icon_id": "16893575",
+      "name": "等级-红",
+      "font_class": "dengji-lanbeifen",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "16893576",
+      "name": "等级-黄",
+      "font_class": "dengji-lanbeifen2",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    },
+    {
+      "icon_id": "16893568",
+      "name": "等级-蓝",
+      "font_class": "dengji-lan",
+      "unicode": "e674",
+      "unicode_decimal": 58996
+    },
+    {
+      "icon_id": "16893491",
+      "name": "认证1",
+      "font_class": "duibeifen",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "16893492",
+      "name": "认证2",
+      "font_class": "dui",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "16893478",
+      "name": "二维码",
+      "font_class": "erweima",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "16893460",
+      "name": "橱窗",
+      "font_class": "xingzhuang",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "16893389",
+      "name": "榜单",
+      "font_class": "gengduo03beifen4",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "16893362",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "16893037",
+      "name": "营销",
+      "font_class": "yingxiao",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "16892922",
+      "name": "直播",
+      "font_class": "zhibo1",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "16892923",
+      "name": "账号",
+      "font_class": "zhanghao",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "16892924",
+      "name": "舆情",
+      "font_class": "yuqing",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "16892308",
+      "name": "关注",
+      "font_class": "guanzhu",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "16892309",
+      "name": "报告",
+      "font_class": "baogao",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "16892310",
+      "name": "榜单",
+      "font_class": "bangdan",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "16892311",
+      "name": "关键词",
+      "font_class": "guanjianci",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "16892312",
+      "name": "应用",
+      "font_class": "yingyong2",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "16892313",
+      "name": "商店",
+      "font_class": "shangdian",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "16869086",
+      "name": "QQ",
+      "font_class": "QQ",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "16869087",
+      "name": "微博",
+      "font_class": "weibo1",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "16869088",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "16869056",
+      "name": "安卓-grey",
+      "font_class": "anzhuo-grey",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "16869057",
+      "name": "谷歌-grey",
+      "font_class": "guge-grey",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "16869058",
+      "name": "安卓-dark",
+      "font_class": "anzhuo-dark",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "16869059",
+      "name": "抖音-dark",
+      "font_class": "douyin-dark",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "16869060",
+      "name": "苹果-grey",
+      "font_class": "pingguo-grey",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "16869061",
+      "name": "话题",
+      "font_class": "huati",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "16869062",
+      "name": "斗鱼-dark-2",
+      "font_class": "douyu-dark-2",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "16869063",
+      "name": "苹果-dark",
+      "font_class": "pingguo-dark",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "16869064",
+      "name": "企鹅-dark",
+      "font_class": "qie-dark",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "16869065",
+      "name": "热搜",
+      "font_class": "resou1",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "16869066",
+      "name": "微信-dark",
+      "font_class": "weixin-dark",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "16869067",
+      "name": "微博-dark",
+      "font_class": "weibo-dark",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "16869068",
+      "name": "虎牙-dark",
+      "font_class": "huya-dark",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "16869069",
+      "name": "快手-dark",
+      "font_class": "kuaishou-dark",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "16869070",
+      "name": "B站-dark",
+      "font_class": "Bzhan-dark",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "16869012",
+      "name": "SAAS",
+      "font_class": "SAAS",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "16869013",
+      "name": "数据",
+      "font_class": "shuju",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "16869014",
+      "name": "快速",
+      "font_class": "kuaisu",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "16869015",
+      "name": "可靠",
+      "font_class": "kekao",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "16868931",
+      "name": "短视频",
+      "font_class": "duanshipin",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "16868932",
+      "name": "近期",
+      "font_class": "jinqi",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "16868933",
+      "name": "短视频-2",
+      "font_class": "duanshipin-2",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "16868934",
+      "name": "应用-2",
+      "font_class": "yingyong-2",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "16868935",
+      "name": "应用",
+      "font_class": "yingyong1",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "16868936",
+      "name": "直播-2",
+      "font_class": "zhibo-2",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "16868937",
+      "name": "直播",
+      "font_class": "zhibo",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "16868938",
+      "name": "自媒体",
+      "font_class": "zimeiti",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "16868939",
+      "name": "自媒体-2",
+      "font_class": "zimeiti-2",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "16840371",
+      "name": "精品",
+      "font_class": "jingpin",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "16840372",
+      "name": "礼物",
+      "font_class": "liwu",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "16840373",
+      "name": "快手",
+      "font_class": "kuaishou",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "16840374",
+      "name": "品牌曝光",
+      "font_class": "pinpaipuguang",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "16840375",
+      "name": "清理",
+      "font_class": "qingli",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "16840376",
+      "name": "热搜",
+      "font_class": "resou",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "16840377",
+      "name": "上架",
+      "font_class": "shangjia",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "16840378",
+      "name": "全球",
+      "font_class": "quanqiu",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "16840379",
+      "name": "视频",
+      "font_class": "shipin",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "16840380",
+      "name": "上升",
+      "font_class": "shangsheng",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "16840381",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "16840382",
+      "name": "小程序",
+      "font_class": "xiaochengxu",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "16840383",
+      "name": "小红书",
+      "font_class": "xiaohongshu1",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "16840384",
+      "name": "主播",
+      "font_class": "zhubo",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "16840385",
+      "name": "直播小时",
+      "font_class": "zhiboxiaoshi",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "16840386",
+      "name": "ios",
+      "font_class": "ios",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "16840387",
+      "name": "种草",
+      "font_class": "zhongcao",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "16840388",
+      "name": "实力",
+      "font_class": "shili",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "16840360",
+      "name": "安卓",
+      "font_class": "anzhuo",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "16840361",
+      "name": "博主",
+      "font_class": "bozhu",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "16840362",
+      "name": "弹幕",
+      "font_class": "danmu",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "16840363",
+      "name": "地区",
+      "font_class": "diqu",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "16840365",
+      "name": "更新",
+      "font_class": "gengxin",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "16840366",
+      "name": "抖音",
+      "font_class": "douyin",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "16840367",
+      "name": "公众号",
+      "font_class": "gongzhonghao1",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "16840368",
+      "name": "好文",
+      "font_class": "haowen",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "16840369",
+      "name": "好物-自",
+      "font_class": "haowu-zi",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "16840370",
+      "name": "好物",
+      "font_class": "haowu",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "16681054",
+      "name": "微博主",
+      "font_class": "weibozhu",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "16681055",
+      "name": "应用",
+      "font_class": "yingyong",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "16681056",
+      "name": "小红书",
+      "font_class": "xiaohongshu",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "16681057",
+      "name": "公众号",
+      "font_class": "gongzhonghao",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "16681058",
+      "name": "抖音号",
+      "font_class": "douyinhao",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "16681059",
+      "name": "快手号",
+      "font_class": "kuaishouhao",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "16675886",
+      "name": "安全管理",
+      "font_class": "anquanguanli",
+      "unicode": "e78c",
+      "unicode_decimal": 59276
+    },
+    {
+      "icon_id": "16675887",
+      "name": "发票管理",
+      "font_class": "fapiaoguanli",
+      "unicode": "e78d",
+      "unicode_decimal": 59277
+    },
+    {
+      "icon_id": "16675888",
+      "name": "订单管理",
+      "font_class": "dingdanguanli",
+      "unicode": "e78e",
+      "unicode_decimal": 59278
+    },
+    {
+      "icon_id": "16675889",
+      "name": "个人中心",
+      "font_class": "gerenzhongxin",
+      "unicode": "e78f",
+      "unicode_decimal": 59279
+    },
+    {
+      "icon_id": "16675890",
+      "name": "购买记录",
+      "font_class": "goumaijilu",
+      "unicode": "e790",
+      "unicode_decimal": 59280
+    },
+    {
+      "icon_id": "16675891",
+      "name": "个人信息",
+      "font_class": "gerenxinxi",
+      "unicode": "e791",
+      "unicode_decimal": 59281
+    },
+    {
+      "icon_id": "16675892",
+      "name": "退出登录",
+      "font_class": "tuichudenglu",
+      "unicode": "e792",
+      "unicode_decimal": 59282
+    },
+    {
+      "icon_id": "16675893",
+      "name": "权限管理",
+      "font_class": "quanxianguanli",
+      "unicode": "e793",
+      "unicode_decimal": 59283
+    },
+    {
+      "icon_id": "16675894",
+      "name": "基本资料",
+      "font_class": "jibenziliao",
+      "unicode": "e794",
+      "unicode_decimal": 59284
+    },
+    {
+      "icon_id": "16675895",
+      "name": "消息管理",
+      "font_class": "xiaoxiguanli",
+      "unicode": "e795",
+      "unicode_decimal": 59285
+    }
+  ]
+}

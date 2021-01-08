@@ -1,0 +1,25 @@
+{
+  "apps": [
+    {
+      "name": "test-diandian-web",
+      "script": "./server/index.js",
+      "env": {
+        "NODE_ENV": "production",
+        "NUXT_ENV_BUILD_ENV": "test"
+      },
+
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "error_file": "~/.pm2/logs/test-diandian-web-error.log",
+      "out_file": "~/.pm2/logs/test-diandian-web-out.log",
+      "instances": 1,
+      "min_uptime": "200s",
+      "max_restarts": 0,
+      "max_memory_restart": "500M",
+      "watch": false,
+      "merge_logs": true,
+      "exec_interpreter": "node",
+      "exec_mode": "cluster",
+      "vizion": false
+    }
+  ]
+}

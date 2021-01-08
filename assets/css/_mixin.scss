@@ -1,0 +1,182 @@
+/** 全局共用mixin */
+/** 字体使用 Semibold*/
+@mixin fontFamilySemibold() {
+  font-family: PingFangSC-Semibold, PingFang SC, sans-serif;
+  font-weight: 600;
+}
+/** 字体使用 Medium*/
+@mixin fontFamilyMedium() {
+  font-family: PingFangSC-Medium, PingFang SC, sans-serif;
+  font-weight: 500;
+}
+/** 字体使用 light*/
+@mixin fontFamilyLight() {
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+}
+/*设置背景图*/
+@mixin backgroundImg($width, $height, $url, $size: cover) {
+  width: $width;
+  height: $height;
+  display: inline-block;
+  background-size: $size;
+  background-repeat: no-repeat;
+  background-position: center;
+  @if $url== '' {
+  } @else {
+    background-image: url($url);
+  }
+}
+/*文本格式化，超出范围，显示省略号 多行*/
+@mixin ellipsisRow($width: auto, $row: 1) {
+  width: $width;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $row;
+  -webkit-box-orient: vertical;
+}
+/*文本格式化，超出范围，显示省略号*/
+@mixin text-overflow($width: 100%, $display: block) {
+  width: $width;
+  display: $display;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+//圆型背景图
+@mixin roundBackgroundImg($width, $height, $radio, $url, $border: none) {
+  width: $width;
+  height: $height;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: $radio;
+  border: $border;
+  @if $url== '' {
+  } @else {
+    background-image: url($url);
+  }
+}
+@mixin fixed($top, $left, $right) {
+  position: fixed !important;
+  top: $top;
+  left: $left;
+  right: $right;
+}
+@mixin userLevel($num, $width, $height) {
+  width: $width;
+  height: $height;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('~assets/img/common/level'+ $num +'.png');
+}
+@mixin linearBg($width, $height, $direction: to right, $color1: rgba(73, 129, 242, 1), $color2: rgba(73, 129, 242, 0)) {
+  width: $width;
+  height: $height;
+  background: linear-gradient($direction, $color1, $color2);
+}
+/** 基本模块布局样式 */
+@mixin baseModule($width: 100%, $height: 100%, $bottom: 8px, $bg: #fff, $radio: 4px) {
+  width: $width;
+  height: $height;
+  background-color: $bg;
+  border-radius: $radio;
+  margin-bottom: $bottom;
+}
+
+/* 画三角形 */
+@mixin triangle($width: 10px, $direction: top, $color: $themeColor) {
+  border: $width solid transparent;
+  @if ($direction == top) {
+    // 上三角
+    border-bottom-color: $color;
+  }
+  @if ($direction == bottom) {
+    // 下三角
+    border-top-color: $color;
+  }
+  @if ($direction == left) {
+    // 左三角
+    border-right-color: $color;
+  }
+  @if ($direction == right) {
+    // 右三角
+    border-left-color: $color;
+  }
+}
+
+/* 定义滚动条样式 圆角和阴影不需要则传入null */
+@mixin scrollBar($width: 10px, $height: 10px, $outColor: $descFontColor, $innerColor: $descFontColor, $radius: 5px, $shadow: null) {
+  /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $height;
+    background-color: $outColor;
+  }
+
+  /*定义滚动条轨道 内阴影+圆角*/
+  &::-webkit-scrollbar-track {
+    @if ($shadow!=null) {
+      -webkit-box-shadow: $shadow;
+    }
+    @if ($radius!=null) {
+      border-radius: $radius;
+    }
+    background-color: $outColor;
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  &::-webkit-scrollbar-thumb {
+    @if ($shadow!=null) {
+      -webkit-box-shadow: $shadow;
+    }
+    @if ($radius!=null) {
+      border-radius: $radius;
+    }
+    background-color: $innerColor;
+    border: 1px solid $innerColor;
+  }
+}
+
+// 美化占位符 placeholder 样式
+@mixin beauty-placeholder($fz, $color: #999, $align: left) {
+  &:-moz-placeholder {
+    font-size: $fz;
+    color: $color;
+    text-align: $align;
+  }
+  &:-ms-input-placeholder {
+    font-size: $fz;
+    color: $color;
+    text-align: $align;
+  }
+  &::-webkit-input-placeholder {
+    font-size: $fz;
+    color: $color;
+    text-align: $align;
+  }
+}
+// 3. 图片
+// 滤镜: 将彩色照片显示为黑白照片、保留图片层次
+@mixin grayscale {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+// 模糊  毛玻璃效果
+@mixin blur($blur: 10px) {
+  -webkit-filter: blur($blur);
+  -moz-filter: blur($blur);
+  -o-filter: blur($blur);
+  -ms-filter: blur($blur);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='${blur}');
+  filter: blur($blur);
+  *zoom: 1;
+}

@@ -1,0 +1,76 @@
+/** 全局变量配置 */
+
+/** 全局主题类颜色 */
+
+// 主题色
+$themeColor: #2259e5;
+// 背景色
+$bodyBg: #f5f5f5;
+// 模块颜色
+$moduleBg: #f7f8fa;
+// 分割线颜色
+$lineColor: #ebecf0;
+// 强调色|付费
+$payColor: #f4404c;
+// 辅助色|更新
+$updateColor: #11b041;
+// 辅助色/畅销
+$popularColor: #f8a12b;
+// 危险色
+$ddColorDanger: #f43f4c;
+// 特殊蓝色
+$infoBageColor: #2a66ff;
+/** 文字颜色 */
+
+// 一级文字
+$baseFontColor: #333;
+// hover之前级文字
+$twoFontColor: #666;
+// 次级文字
+$secondFontColor: #999999;
+// 说明文字
+$descFontColor: #abaeba;
+// 图标
+$iconColor: #b8bbcc;
+/** 详情页-优化难度 */
+$sLevelColor: #dc0000; // S级
+$aLevelColor: #ff6f1e; // A级
+$bLevelColor: #f4b200; // B级
+$cLevelColor: #93b554; // C级
+$dLevelColor: #43b961; // D级
+$eLevelColor: #55b0b4; // E级
+
+/** 详情页-评论评级 */
+$level5: #37c863; // 5
+$level4: #7c92ff; // 4
+$level3: #ead648; // 3
+$level2: #ebaa46; // 2
+$level1: #e27373; // 1
+
+/** 全局图表-前10项颜色 */
+
+$chart1: #2259e5; // 1
+$chart2: #3ebea7; // 1
+$chart3: #ff7688; // 1
+$chart4: #6d56eb; // 1
+$chart5: #ebaa46; // 1
+$chart6: #a6e471; // 1
+$chart7: #8bc3dd; // 1
+$chart8: #43b961; // 1
+$chart9: #ff6f1e; // 1
+$chart10: #a19dfb; // 1
+
+
+// 蒙版-1 用于视频文字垫层
+$MaskColor1: rgba(0, 0, 0, 0.5);
+
+// 蒙版-2 用于弹窗、视频图片背景
+$MaskColor2: rgba(0, 0, 0, 0.4);
+
+// 蒙版-3 用于视频文字垫层
+$MaskColor3: rgba(0, 0, 0, 0.3);
+
+// 视频 抖音颜色
+$videoDyColor: #ff0050;
+$videoKsColor: #ff5002;
+

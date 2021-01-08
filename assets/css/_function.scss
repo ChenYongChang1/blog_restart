@@ -1,0 +1,18 @@
+/**
+共用scss函数
+ */
+@function themeColor($opacity: 1) {
+  @return rgba(34, 89, 229, $opacity);
+}
+@function updateColor($opacity: 1) {
+  @return rgba(17, 176, 65, $opacity);
+}
+@function dangerColor($opacity: 1) {
+  @return rgba(244, 63, 76, $opacity);
+}
+@function whiteColor($opacity: 1) {
+  @return rgba(255, 255, 255, $opacity);
+}
+@function lineColor($opacity: 1) {
+  @return rgba(235, 236, 240, $opacity);
+}

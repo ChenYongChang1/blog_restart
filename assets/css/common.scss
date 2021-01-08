@@ -1,0 +1,121 @@
+/** 公用class配置 */
+.font-10 {
+  -webkit-transform: scale(0.83, 0.83);
+  font-size: 12px;
+  transform: scale(0.83, 0.83);
+  display: inline-block;
+}
+
+.font-8 {
+  -webkit-transform: scale(0.67, 0.67);
+  font-size: 12px;
+  transform: scale(0.67);
+  display: inline-block;
+}
+
+.font-6 {
+  -webkit-transform: scale(0.5, 0.5);
+  font-size: 12px;
+  transform: scale(0.5);
+  display: inline-block;
+}
+.font-12 {
+  font-size: 12px;
+}
+.font-13 {
+  font-size: 13px;
+}
+.font-14 {
+  font-size: 14px;
+}
+.font-16 {
+  font-size: 16px;
+}
+.font-18 {
+  font-size: 18px;
+}
+.font-20 {
+  font-size: 20px;
+}
+.font-24 {
+  font-size: 24px;
+}
+
+.d-block {
+  display: block;
+}
+.d-flex {
+  display: flex;
+}
+
+.d-flex-start {
+  justify-content: flex-start;
+}
+.d-flex-center {
+  justify-content: center;
+}
+.d-flex-end {
+  justify-content: flex-end;
+}
+.d-flex-space {
+  justify-content: space-between;
+}
+.d-align-center {
+  align-items: center;
+}
+.d-flex-column {
+  flex-direction: column;
+}
+
+.d-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.d-img-cover {
+  object-fit: cover;
+}
+.d-img-contain {
+  object-fit: contain;
+}
+.d-radius-4 {
+  border-radius: 4px;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-2 {
+  flex: 2;
+}
+.d-pointer {
+  cursor: pointer;
+}
+
+.d-text-center {
+  text-align: center;
+}
+.d-text-left {
+  text-align: left;
+}
+.d-text-right {
+  text-align: right;
+}
+
+.d-hover-bg {
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.d-base-font-color {
+  color: $baseFontColor;
+}
+.d-theme-color {
+  color: $themeColor;
+}
+
+// 总体内容
+.d-content-center {
+  width: 1100px;
+  margin: auto;
+}

@@ -1,0 +1,26 @@
+/* 改变主题色变量 */
+$--color-primary: $themeColor;
+/// color|1|Functional Color|1
+$--color-success: $updateColor !default;
+/// color|1|Functional Color|1
+$--color-warning: $popularColor !default;
+/// color|1|Functional Color|1
+$--color-danger: $ddColorDanger !default;
+
+/// color|1|Font Color|2
+$--color-text-primary: #111111 !default;
+/// color|1|Font Color|2
+$--color-text-regular: #111111 !default;
+/// color|1|Font Color|2
+$--color-text-secondary: #74757A !default;
+/// color|1|Font Color|2
+$--color-text-placeholder: #ABAEBA !default;
+/// color|1|Border Color|3
+$--border-color-base: #EBECF0 !default;
+
+
+
+// button
+$--border-radius-base: 4px !default;
+$--button-mini-border-radius: $--border-radius-base !default;
+$--button-small-border-radius: $--border-radius-base !default;
