@@ -4,10 +4,12 @@
     <input type="file" @change="uploadMd" @dragover="fileDragover" @dragleave="dragleave" @drop="fileDrop" />
     <mavon-editor v-model="handbook" :toolbars="markdownOption" />
     {{ remain }}
+    <div id="vcomments"></div>
   </div>
 </template>
 
 <script>
+import Valine from 'valine'
 export default {
   data() {
     return {
@@ -46,6 +48,16 @@ export default {
       mdUrl: '',
       handbook: ''
     }
+  },
+  mounted() {
+    const valq = new Valine({
+      el: '#vcomments',
+      avatar: 'retro',
+      visitor: true,
+      placeholder: '说点什么吧...',
+      appId: '1iG5XVR2RnyuqxkuaThMxgla-gzGzoHsz',
+      appKey: 'Fp7PSlgcgOFIFCl1XLqcpTrl'
+    })
   },
   methods: {
     async urlToUploadFile() {
@@ -100,5 +112,10 @@ input {
   width: 100px;
   height: 100px;
   border: solid 1px $lineColor;
+}
+#vcomments {
+  /deep/ .vwrap {
+    background: $moduleBg;
+  }
 }
 </style>

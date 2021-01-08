@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header-inner d-content-center d-flex d-flex-space d-align-center">
       <div class="logo">
-        <a href="/" class="d-block font-18" title="天天的博客">天天的博客</a>
+        <a href="/" class="d-block font-18" title="天天的博客">点点aso</a>
       </div>
       <div class="right-menu d-flex d-flex-end">
         <a title="标签" href="/tags" class="menu-item d-block font-16 d-hover-bg d-radius-4">标签</a>

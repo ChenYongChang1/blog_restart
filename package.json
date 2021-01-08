@@ -49,6 +49,7 @@
     "nuxt": "^2.0.0",
     "qs": "^6.9.4",
     "v-charts": "^1.19.0",
+    "valine": "^1.4.14",
     "videojs-contrib-hls": "^5.15.0",
     "vue-clipboard2": "^0.3.1",
     "vue-i18n": "^8.18.1",

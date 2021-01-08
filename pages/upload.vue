@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="editor">
-      <mavon-editor v-model="handbook" :toolbars="markdownOption" />
+      <mavon-editor v-model="handbook" :toolbars="markdownOption" @save="saveMd" />
     </div>
   </div>
 </template>
@@ -67,11 +67,28 @@ export default {
     }
   },
   methods: {
+    //   保存当前的md文件
+    saveMd() {
+      /* 这个文章应该有
+       article: {
+            8. id
+            1. 标题
+            7 描述
+            2. 时间
+            3. 发布人
+            4. 标签
+            5. 点开人数
+            6. 点赞人
+       },
+       */
+      console.log(`文章的内容:${this.handbook}`)
+    },
     async urlToUploadFile() {
       console.log(this.webUrl)
       const res = await this.$axios.post('http://106.14.212.56/api2/add/article', {
-        db: 'sdadadasd',
-        table: 'test',
+        db: 'cyc',
+        table: 'cyc',
+        save_db: false,
         jsonMessage: {
           // resource: 'cnblogs',
           url: this.webUrl
