@@ -12,9 +12,7 @@ const getUserAuth = async ($axios, store) => {
 }
 
 export default function({ app, $axios, store }) {
-  if (process.env.NUXT_ENV_BUILD_ENV !== 'development') {
-    $axios.defaults.baseURL = env[process.env.NUXT_ENV_BUILD_ENV].ENV_API
-  }
+  $axios.defaults.baseURL = env[process.env.NUXT_ENV_BUILD_ENV].ENV_API
   $axios.defaults.withCredentials = true
   // $axios.defaults.headers.post.platform = 3 // 基本配置
   $axios.defaults.timeout = 30000

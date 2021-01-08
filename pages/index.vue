@@ -7,7 +7,11 @@
 <script>
 import BlogList from '@/components/page/home/BlogList'
 export default {
-  components: { BlogList }
+  components: { BlogList },
+  async asyncData({ params, query, store }) {
+    console.log(store)
+    const res = await store.dispatch('acticle/getArticleList')
+  }
 }
 </script>
 

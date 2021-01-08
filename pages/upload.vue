@@ -15,8 +15,21 @@
         </el-popover>
       </div>
     </div>
+    <div class="d-flex">
+      <div class="article-title">
+        <el-input v-model="article.title" placeholder="请输入文章的标题"></el-input>
+      </div>
+      <div class="article-title">
+        <el-input v-model="article.desc" :autosize="{ minRows: 1, maxRows: 4 }" placeholder="请输入文章的描述"></el-input>
+      </div>
+      <div class="article-title">
+        <el-select v-model="article.tags" filterable allow-create multiple default-first-option placeholder="请选择文章的标签">
+          <el-option v-for="item in tagsList" :key="item.name" :label="item.name" :value="item.name"> </el-option>
+        </el-select>
+      </div>
+    </div>
     <div class="editor">
-      <mavon-editor v-model="handbook" :toolbars="markdownOption" @save="saveMd" />
+      <mavon-editor ref="md-editor" v-model="article.handbook" :toolbars="markdownOption" @imgAdd="imgAdd" @save="saveMd" />
     </div>
   </div>
 </template>
@@ -24,6 +37,7 @@
 <script>
 export default {
   data() {
+    const _this = this
     return {
       markdownOption: {
         bold: true, // 粗体
@@ -63,12 +77,30 @@ export default {
         1: '框内放下以上传'
       },
       webUrl: '',
-      handbook: ''
+      tagsList: [
+        {
+          name: '前端'
+        }
+      ],
+      article: {
+        id: '',
+        title: '',
+        desc: '',
+        tags: [],
+        handbook: '',
+        time: '',
+        user: '',
+        count: 0,
+        like: 0
+      }
     }
+  },
+  mounted() {
+    this.getOssSign()
   },
   methods: {
     //   保存当前的md文件
-    saveMd() {
+    async saveMd() {
       /* 这个文章应该有
        article: {
             8. id
@@ -81,27 +113,42 @@ export default {
             6. 点赞人
        },
        */
-      console.log(`文章的内容:${this.handbook}`)
+      const article = {
+        ...this.article,
+        id: this.$randomString(16),
+        user: this.$store.state.userInfo.id
+      }
+      const res = await this.$store.dispatch('acticle/addArticle', article)
+      if (res.code === 200) {
+        this.$message.success('添加成功')
+        this.$router.push(`/article-${res.data.id}`)
+      }
     },
-    async urlToUploadFile() {
-      console.log(this.webUrl)
-      const res = await this.$axios.post('http://106.14.212.56/api2/add/article', {
-        db: 'cyc',
-        table: 'cyc',
-        save_db: false,
-        jsonMessage: {
-          // resource: 'cnblogs',
-          url: this.webUrl
-        }
-      })
+    /**
+     * 获取阿里云oss签名
+     */
+    async getOssSign() {
+      const res = await this.$store.dispatch('getOssSign')
       console.log(res)
-      this.handbook = res.data.content
+    },
+    async imgAdd(pos, $file) {
+      //   添加图片
+      console.log(pos, $file)
+      await this.$store.dispatch('uploadImg', $file)
+      this.$refs['md-editor'].$img2Url(pos, url)
+    },
+    /**
+     * 获取他人博客的 html
+     */
+    async urlToUploadFile() {
+      const res = await this.$store.dispatch('acticle/getOtherBlogMd', { webUrl: this.webUrl })
+      this.article.handbook = res.data.content
     },
     // 读取文件
     readMdFile(file) {
       const reader = new FileReader()
       reader.onload = (e) => {
-        this.handbook = e.target.result
+        this.article.handbook = e.target.result
       }
       reader.readAsText(file)
     },
@@ -165,9 +212,17 @@ export default {
       }
     }
   }
+  .article-title {
+    margin: 0 10px 20px 0;
+    width: 300px;
+    .el-select {
+      width: 100%;
+    }
+  }
   .editor {
-    height: 600px;
+    min-height: 600px;
     /deep/ .v-note-wrapper {
+      min-height: 600px;
       height: 100%;
     }
   }
