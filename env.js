@@ -7,8 +7,8 @@ module.exports = {
     ENV_API_MOCK: 'http://easymock-esports8.cfesport.com/mock/5f1e4274a72cdc00200950b3/api/v1',
     // http://easymock-esports8.cfesport.com/mock/5f1e4274a72cdc00200950b3/api/v1/index
     // ENV_API: 'http://easymock-esports8.cfesport.com/mock/5f1e4274a72cdc00200950b3/api/v1', // 开发服务器接口地址
-    CDN_ROOT: '//esports-cdn.namitiyu.com',
-    WSS_HOST: 'wss://push.esports8.com',
+    CDN_ROOT: '',
+    WSS_HOST: '',
     WSS_PORT: 8099,
     HOST: ''
   },
@@ -16,19 +16,19 @@ module.exports = {
     PORT: 9533, // 测试服务器端口
     MODE: 'test',
     ENV_API: 'http://106.14.212.56/api2/', // 开发服务器接口地址
-    CDN_ROOT: '//esports-cdn.namitiyu.com',
-    WSS_HOST: 'wss://push.esports8.com',
+    CDN_ROOT: '',
+    WSS_HOST: '',
     WSS_PORT: 8099,
-    HOST: 'diandian.com'
+    HOST: ''
   },
   production: {
     PORT: 8099, // 正式服务器端口
-    WWWROOT: '//www.diandian.com',
+    WWWROOT: '',
     MODE: 'production',
-    ENV_API: 'https://api.diandian.com/pc', // 正式服务器接口地址
-    CDN_ROOT: '//esports-cdn.namitiyu.com',
-    WSS_HOST: 'wss://push.esports8.com',
+    ENV_API: 'http://106.14.212.56/api2/', // 正式服务器接口地址
+    CDN_ROOT: '',
+    WSS_HOST: '',
     WSS_PORT: 8099,
-    HOST: 'diandian.com'
+    HOST: ''
   }
 }
