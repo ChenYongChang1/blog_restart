@@ -4,6 +4,10 @@
     <input type="file" @change="uploadMd" @dragover="fileDragover" @dragleave="dragleave" @drop="fileDrop" />
     <mavon-editor v-model="handbook" :toolbars="markdownOption" />
     {{ remain }}
+    <!-- <span id="/md" class="leancloud_visitors" data-flag-title="点点网">
+      <em class="post-meta-item-text">阅读量 </em>
+      <i class="leancloud-visitors-count">0</i>
+    </span> -->
     <div id="vcomments"></div>
   </div>
 </template>
@@ -53,7 +57,8 @@ export default {
     const valq = new Valine({
       el: '#vcomments',
       avatar: 'retro',
-      visitor: true,
+      visitor: false,
+      recordIP: true,
       placeholder: '说点什么吧...',
       appId: '1iG5XVR2RnyuqxkuaThMxgla-gzGzoHsz',
       appKey: 'Fp7PSlgcgOFIFCl1XLqcpTrl'
