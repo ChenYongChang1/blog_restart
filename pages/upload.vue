@@ -134,7 +134,8 @@ export default {
     async imgAdd(pos, $file) {
       //   添加图片
       console.log(pos, $file)
-      await this.$store.dispatch('uploadImg', $file)
+      const url = await this.$store.dispatch('uploadImg', $file)
+      console.log(url)
       this.$refs['md-editor'].$img2Url(pos, url)
     },
     /**

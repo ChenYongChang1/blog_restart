@@ -32,9 +32,9 @@ export default function({ app, $axios, store }) {
   // 相应拦截器
   $axios.onResponse((res) => {
     if (res.status === 200) {
-      if (res.data.code !== 200) {
+      if (res.data.code !== 200 && !res.config.url.includes('cyc-save.oss-cn-shanghai.aliyuncs.com')) {
         // eslint-disable-next-line no-unused-expressions
-        console.log('接口请求出错', res, res.data)
+        console.log('接口请求出错', res, res.config.url.includes('cyc-save.oss-cn-shanghai.aliyuncs.com'))
         return Promise.reject(res.data)
       }
       return Promise.resolve(res.data)

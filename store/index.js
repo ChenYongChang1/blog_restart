@@ -41,6 +41,6 @@ export const actions = {
       headers: { 'Content-Type': 'multipart/form-data' },
       withCredentials: false
     })
-    return `${state.ossSign.dir}/${names}`
+    return `https://cyc-save.oss-cn-shanghai.aliyuncs.com/${state.ossSign.dir}/${names}`
   }
 }
