@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Valine from 'valine'
+// import Valine from 'valine'
 export default {
   data() {
     return {
@@ -54,15 +54,15 @@ export default {
     }
   },
   mounted() {
-    const valq = new Valine({
-      el: '#vcomments',
-      avatar: 'retro',
-      visitor: false,
-      recordIP: true,
-      placeholder: '说点什么吧...',
-      appId: '1iG5XVR2RnyuqxkuaThMxgla-gzGzoHsz',
-      appKey: 'Fp7PSlgcgOFIFCl1XLqcpTrl'
-    })
+    // const valq = new Valine({
+    //   el: '#vcomments',
+    //   avatar: 'retro',
+    //   visitor: false,
+    //   recordIP: true,
+    //   placeholder: '说点什么吧...',
+    //   appId: '1iG5XVR2RnyuqxkuaThMxgla-gzGzoHsz',
+    //   appKey: 'Fp7PSlgcgOFIFCl1XLqcpTrl'
+    // })
   },
   methods: {
     async urlToUploadFile() {

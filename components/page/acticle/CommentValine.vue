@@ -3,10 +3,11 @@
 </template>
 
 <script>
-import Valine from 'valine'
+// import Valine from 'valine'
 export default {
   name: 'CommentValine',
   mounted() {
+    const Valine = require('valine')
     const valq = new Valine({
       el: '#vcomments',
       avatar: 'retro',

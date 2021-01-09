@@ -13,7 +13,7 @@ module.exports = {
       total: true // 跟踪在服务器端渲染上花费的整个时间
     }
   },
-  mode: process.env.NUXT_ENV_BUILD_ENV === 'production' ? 'universal' : 'spa',
+  mode: 'universal',
   /*
    ** Headers of the page
    */
