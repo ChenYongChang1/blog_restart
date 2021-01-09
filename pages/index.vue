@@ -13,6 +13,16 @@ export default {
     return {
       page: parseInt(page) || 1
     }
+  },
+  head() {
+    const { title, desc, tags } = this.article
+    return {
+      title: `陈永昌的博客`,
+      meta: [
+        { hid: 'description', name: 'description', content: `陈永昌的博客提供技术分享学习` },
+        { name: 'keywords', content: '' }
+      ]
+    }
   }
 }
 </script>
