@@ -1,8 +1,7 @@
 <template>
   <div class="blog-list-box">
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
+    <blog-item v-for="item in blogTableList" :key="`blog-${item.id}`" :blog-row="item"></blog-item>
+    <el-pagination background layout="prev, pager, next" :current-page="page" hide-on-single-page :total="count" @current-change="currentChange"> </el-pagination>
   </div>
 </template>
 
@@ -10,7 +9,36 @@
 import BlogItem from '@/components/page/home/BlogItem'
 export default {
   name: 'BlogList',
-  components: { BlogItem }
+  components: { BlogItem },
+  props: {
+    page: {
+      type: Number,
+      default: 1
+    }
+  },
+  async fetch() {
+    await this.getArticleList()
+  },
+  data() {
+    return {
+      blogTableList: [],
+      count: 0
+    }
+  },
+  watch: {
+    '$route.query.page': '$fetch'
+  },
+  methods: {
+    async getArticleList(query = {}) {
+      const res = await this.$store.dispatch('acticle/getArticleList', { query, page: this.page })
+      this.blogTableList = res.data.list
+      this.count = res.data.count
+    },
+    currentChange(e) {
+      console.log(e)
+      this.$router.push(`?page=${e}`)
+    }
+  }
 }
 </script>
 
@@ -18,5 +46,8 @@ export default {
 .blog-list-box {
   width: 100%;
   min-height: calc(100vh - 170px);
+  .el-pagination {
+    margin: 20px 0;
+  }
 }
 </style>

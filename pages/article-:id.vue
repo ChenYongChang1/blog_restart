@@ -15,7 +15,7 @@ import Valine from 'valine'
 export default {
   async asyncData({ params, query, store }) {
     const { id } = params
-    const res = await store.dispatch('acticle/getArticleList', { id })
+    const res = await store.dispatch('acticle/getArticleList', { query: { id } })
     const article = res.data.list[0]
     console.log(article)
     return {

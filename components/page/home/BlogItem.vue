@@ -1,21 +1,29 @@
 <template>
   <article class="blog-item font-16">
     <h2 class="artcle-title d-flex">
-      <a href="/artcle/这是标题" title="这是标题" class="title-name d-block">这是标题</a>
+      <a :href="`/article-${blogRow.id}`" :title="blogRow.title" class="title-name d-block">{{ blogRow.title }}</a>
     </h2>
     <div class="article-info">
       <span class="hide-sm">发表于</span>
       <time>2020-12-30</time> | <span class="hide-sm">分类于</span>
-      <a href="/tags/前端" title="前端" class="hover-highlight">前端</a>
+      <a :href="`/tags/${blogRow.tags}`" :title="blogRow" class="hover-highlight">{{ blogRow.tags }}</a>
     </div>
     <div class="article-desc">
-      在上一篇文章中:搭建SpringMVC与SpringBoot项目了解了Spring的基本使用，本文将继续学习SpringCloud相关知识，主要包括环境搭建和服务注册等内容，进而迈入Java微服务的大门~
+      {{ blogRow.desc }}
     </div>
   </article>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'BlogItem',
+  props: {
+    blogRow: {
+      type: Object,
+      default: () => ({})
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

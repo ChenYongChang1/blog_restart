@@ -23,19 +23,25 @@
         <el-input v-model="article.desc" :autosize="{ minRows: 1, maxRows: 4 }" placeholder="请输入文章的描述"></el-input>
       </div>
       <div class="article-title">
-        <el-select v-model="article.tags" filterable allow-create multiple default-first-option placeholder="请选择文章的标签">
-          <el-option v-for="item in tagsList" :key="item.name" :label="item.name" :value="item.name"> </el-option>
+        <el-select v-model="article.tags" filterable allow-create default-first-option placeholder="请选择文章的标签">
+          <el-option v-for="item in tagsList" :key="item.name.toLowerCase()" :label="item.name" :value="item.name.toLowerCase()"> </el-option>
         </el-select>
+      </div>
+      <div class="article-title">
+        <el-button type="primary" @click="saveMdTodb">保存</el-button>
       </div>
     </div>
     <div class="editor">
-      <mavon-editor ref="md-editor" v-model="article.handbook" :toolbars="markdownOption" @imgAdd="imgAdd" @save="saveMd" />
+      <mavon-editor ref="md-editor" v-model="article.handbook" :toolbars="markdownOption" @imgAdd="imgAdd" @save="saveMdTodb" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  fetch() {
+    this.getTagsList()
+  },
   data() {
     const _this = this
     return {
@@ -77,16 +83,12 @@ export default {
         1: '框内放下以上传'
       },
       webUrl: '',
-      tagsList: [
-        {
-          name: '前端'
-        }
-      ],
+      tagsList: [],
       article: {
         id: '',
         title: '',
         desc: '',
-        tags: [],
+        tags: '',
         handbook: '',
         time: '',
         user: '',
@@ -99,6 +101,27 @@ export default {
     this.getOssSign()
   },
   methods: {
+    checkTagsIsCreate() {
+      // 判断tags是否是新建的
+      const selectTags = this.tagsList.map((item) => item.name)
+      const newTags = this.article.tags.filter((item) => selectTags.includes(item))
+      console.log(newTags)
+    },
+    saveMdTodb() {
+      if (!this.article.title) {
+        this.$message.error('文章标题不可为空')
+        return
+      }
+      if (!this.article.desc) {
+        this.$message.error('文章描述不可为空')
+        return
+      }
+      if (!(this.article.tags && this.article.tags.length)) {
+        this.$message.error('文章标签不可为空')
+        return
+      }
+      this.saveMd()
+    },
     //   保存当前的md文件
     async saveMd() {
       /* 这个文章应该有
@@ -116,13 +139,22 @@ export default {
       const article = {
         ...this.article,
         id: this.$randomString(16),
-        user: this.$store.state.userInfo.id
+        user: this.$store.state.userInfo.id,
+        time: new Date().getTime()
       }
       const res = await this.$store.dispatch('acticle/addArticle', article)
       if (res.code === 200) {
         this.$message.success('添加成功')
-        this.$router.push(`/article-${res.data.id}`)
+        // this.$router.push(`/article-${res.data.id}`)
       }
+      this.$store.dispatch('acticle/addTags', { name: this.article.tags })
+    },
+    /**
+     * 获取标签
+     */
+    async getTagsList() {
+      const res = await this.$store.dispatch('acticle/getTagsList', {})
+      this.tagsList = res.data.list
     },
     /**
      * 获取阿里云oss签名

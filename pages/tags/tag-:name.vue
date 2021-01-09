@@ -9,8 +9,10 @@ import BlogList from '@/components/page/home/BlogList'
 export default {
   components: { BlogList },
   asyncData({ params, query, store }) {
+    const { name } = params
     const { page = 1 } = query
     return {
+      name,
       page: parseInt(page) || 1
     }
   }

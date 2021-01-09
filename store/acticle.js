@@ -33,12 +33,21 @@ export const actions = {
    * 获取文章列表
    */
   async getArticleList({ commit, dispatch, state, rootState }, opt = {}) {
+    const {
+      query = {},
+      page = 1,
+      order = {
+        orderBy: 'time',
+        isDesc: 1
+      }
+    } = opt
     const res = await this.$axios.post('/query/data', {
       db: 'cyctest',
-      table: 'test',
-      page: 1,
+      table: 'article',
+      page,
       pageSize: 10,
-      jsonMessage: opt
+      order,
+      jsonMessage: query
     })
     return res
   },
@@ -48,7 +57,43 @@ export const actions = {
   async addArticle({ commit, dispatch, state, rootState }, opt = {}) {
     const res = await this.$axios.post('/add/data', {
       db: 'cyctest',
-      table: 'test',
+      table: 'article',
+      jsonMessage: opt
+    })
+    return res
+  },
+  /**
+   * 获取标签
+   */
+  async getTagsList({ commit, dispatch, state, rootState }, opt = {}) {
+    function groupByName(list, name = 'name') {
+      const newList = []
+      list.forEach((item) => {
+        const row = newList.find((i) => i[name] === item[name]) || ''
+        if (!row) {
+          newList.push({ name: item[name], count: 1 })
+        } else {
+          row.count++
+        }
+      })
+      return newList
+    }
+    const { query = {} } = opt
+    const res = await this.$axios.post('/query/data', {
+      db: 'cyctest',
+      table: 'tags',
+      jsonMessage: query
+    })
+    res.data.list = groupByName(res.data.list, 'name')
+    return res
+  },
+  /**
+   * 添加博客
+   */
+  async addTags({ commit, dispatch, state, rootState }, opt = {}) {
+    const res = await this.$axios.post('/add/data', {
+      db: 'cyctest',
+      table: 'tags',
       jsonMessage: opt
     })
     return res
