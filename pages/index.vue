@@ -15,7 +15,6 @@ export default {
     }
   },
   head() {
-    const { title, desc, tags } = this.article
     return {
       title: `陈永昌的博客`,
       meta: [

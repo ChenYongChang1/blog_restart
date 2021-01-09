@@ -1,7 +1,7 @@
 {
-  "name": "diandian-web",
+  "name": "cyc-blog",
   "version": "1.0.0",
-  "description": "diandian-web",
+  "description": "cyc-blog",
   "author": "chengeng",
   "private": true,
   "scripts": {
