@@ -6,13 +6,18 @@
     <article class="article-content">
       <mavon-editor v-model="article.handbook" :subfield="isEdit" preview-background="white" :default-open="!isEdit ? 'preview' : ''" :toolbars-flag="isEdit" :toolbars="markdownOption" @save="saveMd" />
     </article>
-    <div id="vcomments"></div>
+    <div>
+      <client-only>
+        <comment-valine></comment-valine>
+      </client-only>
+    </div>
   </div>
 </template>
 
 <script>
-import Valine from 'valine'
+import CommentValine from '@/components/page/acticle/CommentValine'
 export default {
+  components: { CommentValine },
   async asyncData({ params, query, store }) {
     const { id } = params
     const res = await store.dispatch('acticle/getArticleList', { query: { id } })
@@ -65,17 +70,7 @@ export default {
       return {}
     }
   },
-  mounted() {
-    const valq = new Valine({
-      el: '#vcomments',
-      avatar: 'retro',
-      visitor: false,
-      recordIP: true,
-      placeholder: '说点什么吧...',
-      appId: '1iG5XVR2RnyuqxkuaThMxgla-gzGzoHsz',
-      appKey: 'Fp7PSlgcgOFIFCl1XLqcpTrl'
-    })
-  },
+  mounted() {},
   methods: {
     changeIsEdit() {
       // 更改现在文章的状态
