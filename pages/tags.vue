@@ -1,10 +1,13 @@
 <template>
   <div class="tags-box d-content-center">
-    <ul v-if="!name" class="ul-tags d-flex">
-      <li v-for="(item, index) in tagsList" :key="`tag-${index}`" class="li-tag d-radius-4">
-        <a :href="`/tags/tag-${item.name}`">{{ item.name }}({{ item.count }})</a>
-      </li>
-    </ul>
+    <div v-if="!name" class="ul-tags d-text-center">
+      <span class="count-tags d-black-color font-14">当前一共{{ tagsList.length || 0 }}个标签</span>
+      <div class="tags-list d-flex">
+        <div>
+          <a v-for="(item, index) in tagsList" :key="`tag-${index}`" :href="`/tags/tag-${item.name}`" :style="{ fontSize: parseInt(12 + item.count / 3) + 'px' }" :title="`${item.name}(${item.count})`" class="li-tag">{{ item.name }}</a>
+        </div>
+      </div>
+    </div>
     <nuxt-child v-else :name="name"></nuxt-child>
   </div>
 </template>
@@ -16,9 +19,10 @@ export default {
     if (name) {
       return { name }
     }
-    const res = await store.dispatch('acticle/getTagsList', {})
+    const res = (await store.dispatch('acticle/getTagsList', {})) || {}
     return {
-      tagsList: res.data.list
+      name,
+      tagsList: res.data.list || []
     }
   },
   methods: {}
@@ -32,14 +36,22 @@ export default {
 .ul-tags {
   min-height: calc(100vh - 270px);
   padding: 10px 0 30px 0;
-  background: white;
-}
-.li-tag {
-  padding: 0 10px;
-  height: 20px;
-  background: $moduleBg;
-  text-align: center;
-  line-height: 20px;
-  margin-right: 10px;
+  .count-tags {
+    margin-bottom: 20px;
+  }
+  .tags-list {
+    width: 100%;
+    flex-wrap: wrap;
+    .li-tag {
+      margin: 10px;
+      padding-bottom: 5px;
+      border-bottom: solid 1px $twoFontColor;
+      color: $twoFontColor;
+      &:hover {
+        border-bottom: solid 1px $baseFontColor;
+        color: $baseFontColor;
+      }
+    }
+  }
 }
 </style>
