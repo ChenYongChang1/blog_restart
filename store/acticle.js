@@ -35,16 +35,17 @@ export const actions = {
   async getArticleList({ commit, dispatch, state, rootState }, opt = {}) {
     const {
       query = {},
+      notPage = false,
       page = 1,
       order = {
         orderBy: 'time',
-        isDesc: 1
+        isDesc: -1
       }
     } = opt
     const res = await this.$axios.post('/query/data', {
       db: 'cyctest',
       table: 'article',
-      page,
+      page: notPage ? undefined : page,
       pageSize: 10,
       order,
       jsonMessage: query
