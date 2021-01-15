@@ -12,7 +12,7 @@ export default {
   name: 'FooterMain',
   data() {
     return {
-      copyright: 'Copyright © 2021 chenyongchang.All Rights Reserved'
+      copyright: '皖ICP备2021000672号丨Copyright © 2021 chenyongchang.All Rights Reserved'
     }
   }
 }
