@@ -3,7 +3,7 @@
     <div class="d-content-center">
       <p>世人的悲欢并不相通，我只是觉得他们吵闹。</p>
     </div>
-    <div class="record d-text-center">{{ copyright }}</div>
+    <div class="record d-text-center font-12">{{ copyright }}</div>
   </div>
 </template>
 
