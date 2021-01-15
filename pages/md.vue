@@ -4,7 +4,7 @@
     <input type="file" @change="uploadMd" @dragover="fileDragover" @dragleave="dragleave" @drop="fileDrop" />
     <mavon-editor v-model="handbook" :toolbars="markdownOption" />
     {{ remain }}
-    <!-- <span id="/md" class="leancloud_visitors" data-flag-title="点点网">
+    <!-- <span id="/md" class="leancloud_visitors" data-flag-title="前端程序猿">
       <em class="post-meta-item-text">阅读量 </em>
       <i class="leancloud-visitors-count">0</i>
     </span> -->
