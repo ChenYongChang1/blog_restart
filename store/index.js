@@ -1,10 +1,6 @@
 export const state = () => ({
   assToken: '',
-  ossSign: {},
-  userInfo: {
-    name: 'cyc',
-    id: 123
-  }
+  ossSign: {}
 })
 
 export const mutations = {

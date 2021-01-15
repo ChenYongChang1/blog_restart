@@ -1,5 +1,6 @@
 export const state = () => ({
-  articleList: []
+  articleList: [],
+  DB_NAME: 'cyctest'
 })
 
 export const mutations = {
@@ -40,14 +41,16 @@ export const actions = {
       order = {
         orderBy: 'time',
         isDesc: -1
-      }
+      },
+      remove
     } = opt
     const res = await this.$axios.post('/query/data', {
-      db: 'cyctest',
+      db: state.DB_NAME,
       table: 'article',
       page: notPage ? undefined : page,
       pageSize: 10,
       order,
+      remove,
       jsonMessage: query
     })
     return res
@@ -57,7 +60,7 @@ export const actions = {
    */
   async addArticle({ commit, dispatch, state, rootState }, opt = {}) {
     const res = await this.$axios.post('/add/data', {
-      db: 'cyctest',
+      db: state.DB_NAME,
       table: 'article',
       jsonMessage: opt
     })
@@ -81,7 +84,7 @@ export const actions = {
     }
     const { query = {} } = opt
     const res = await this.$axios.post('/query/data', {
-      db: 'cyctest',
+      db: state.DB_NAME,
       table: 'tags',
       jsonMessage: query
     })
@@ -89,13 +92,38 @@ export const actions = {
     return res
   },
   /**
-   * 添加博客
+   * 添加标签
    */
   async addTags({ commit, dispatch, state, rootState }, opt = {}) {
     const res = await this.$axios.post('/add/data', {
-      db: 'cyctest',
+      db: state.DB_NAME,
       table: 'tags',
       jsonMessage: opt
+    })
+    return res
+  },
+  /**
+   * 修改博客
+   */
+  async updataArticle({ commit, dispatch, state, rootState }, opt = {}) {
+    const { id, json } = opt
+    const res = await this.$axios.post('/update/replace', {
+      db: state.DB_NAME,
+      table: 'article',
+      query: { id },
+      jsonMessage: json
+    })
+    return res
+  },
+  /**
+   * 删除博客
+   */
+  async daleteArticle({ commit, dispatch, state, rootState }, opt = {}) {
+    const { id } = opt
+    const res = await this.$axios.post('/delete/deleteone', {
+      db: state.DB_NAME,
+      table: 'article',
+      jsonMessage: { id }
     })
     return res
   }

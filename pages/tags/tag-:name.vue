@@ -1,11 +1,13 @@
 <template>
-  <div class="home-page d-content-center">
+  <div class="tags-page d-content-center">
     <el-timeline>
       <el-timeline-item v-for="item in artilceList" :key="`el-timeline-${item.id}`" :timestamp="$formatDate(item.time, 'yyyy-MM-dd')" placement="top">
-        <el-card>
-          <h4>{{ item.title }}</h4>
-          <p>{{ item.desc }}</p>
-        </el-card>
+        <a :href="`/article-${item.id}`">
+          <el-card shadow="hover">
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.desc }}</p>
+          </el-card>
+        </a>
       </el-timeline-item>
     </el-timeline>
   </div>
@@ -21,11 +23,12 @@ export default {
       query: {
         tags: name
       },
+      remove: ['handbook'],
       notPage: true
     })
-    console.log(res, 'asd')
+    const artilceList = res.data.list
     return {
-      artilceList: [],
+      artilceList,
       name
     }
   }
@@ -33,7 +36,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home-page {
+.tags-page {
+  min-height: 80vh;
   padding-top: 30px;
 }
 </style>

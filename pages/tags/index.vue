@@ -8,7 +8,7 @@
         </div>
       </div>
     </div>
-    <nuxt-child v-else :name="name"></nuxt-child>
+    <!-- <nuxt-child v-else :name="name"></nuxt-child> -->
   </div>
 </template>
 
@@ -45,7 +45,7 @@ export default {
     .li-tag {
       margin: 10px;
       padding-bottom: 5px;
-      border-bottom: solid 1px $twoFontColor;
+      border-bottom: dashed 1px $twoFontColor;
       color: $twoFontColor;
       &:hover {
         border-bottom: solid 1px $baseFontColor;

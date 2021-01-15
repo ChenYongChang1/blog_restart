@@ -1,5 +1,6 @@
 <template>
   <div class="day-blog">
+    <login v-if="isShowLogin"></login>
     <header-main></header-main>
     <nuxt />
     <footer-main></footer-main>
@@ -8,12 +9,28 @@
 <script>
 import HeaderMain from '@/components/layout/header/HeaderMain'
 import FooterMain from '@/components/layout/footer/FooterMain'
+import Login from '@/components/page/Login'
 export default {
-  components: { HeaderMain, FooterMain },
+  components: { HeaderMain, FooterMain, Login },
   data() {
     return {}
   },
-  mounted() {},
+  computed: {
+    isShowLogin() {
+      return this.$store.state.user.isShowLogin
+    }
+  },
+  mounted() {
+    const agent = navigator.userAgent
+    this.$store.commit('user/SET_USER_INFO', { id: agent, name: 'custom' })
+    document.onkeydown = (e) => {
+      // 事件对象兼容
+      const oEvent = e || event || window.event
+      if (oEvent.ctrlKey && oEvent.keyCode === 13) {
+        this.$store.commit('user/SET_LOGIN', true)
+      }
+    }
+  },
   methods: {}
 }
 </script>

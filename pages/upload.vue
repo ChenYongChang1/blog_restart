@@ -139,7 +139,7 @@ export default {
       const article = {
         ...this.article,
         id: this.$randomString(16),
-        user: this.$store.state.userInfo.id,
+        user: this.$store.state.user.userInfo.id,
         time: new Date().getTime()
       }
       const res = await this.$store.dispatch('acticle/addArticle', article)

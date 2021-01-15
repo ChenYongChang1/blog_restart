@@ -1,9 +1,25 @@
 <template>
   <div class="article d-content-center">
-    <div class="edit-article">
-      <el-button type="primary" @click="changeIsEdit">{{ isEdit ? '保存' : '编辑' }}</el-button>
+    <div v-if="isAdmin" class="edit-article">
+      <el-button class="btn-edit d-block" type="primary" @click="deleteMd">删除</el-button>
+      <el-button v-if="isEdit" class="btn-edit d-block" type="primary" @click="cancel">取消</el-button>
+      <el-button class="btn-edit d-block" type="primary" @click="changeIsEdit">{{ isEdit ? '保存' : '编辑' }}</el-button>
     </div>
     <article class="article-content">
+      <div v-if="isAdmin && isEdit" class="d-flex">
+        <div class="article-title">
+          <el-input v-model="article.title" placeholder="请输入文章的标题"></el-input>
+        </div>
+        <div class="article-title">
+          <el-input v-model="article.desc" :autosize="{ minRows: 1, maxRows: 4 }" placeholder="请输入文章的描述"></el-input>
+        </div>
+        <div class="article-title">
+          <el-select v-model="article.tags" filterable allow-create default-first-option placeholder="请选择文章的标签">
+            <el-option v-for="item in tagsList" :key="item.name.toLowerCase()" :label="item.name" :value="item.name.toLowerCase()"> </el-option>
+          </el-select>
+        </div>
+      </div>
+      <h1 v-else class="a-title">{{ article.title }}</h1>
       <mavon-editor v-model="article.handbook" :subfield="isEdit" preview-background="white" :default-open="!isEdit ? 'preview' : ''" :toolbars-flag="isEdit" :toolbars="markdownOption" @save="saveMd" />
     </article>
     <div>
@@ -22,14 +38,17 @@ export default {
     const { id } = params
     const res = await store.dispatch('acticle/getArticleList', { query: { id } })
     const article = res.data.list[0]
-    console.log(article)
+    const remember = JSON.stringify(article)
     return {
-      article
+      id,
+      article,
+      remember
     }
   },
   data() {
     return {
-      isEdit: false
+      isEdit: false,
+      tagsList: []
     }
   },
   computed: {
@@ -68,10 +87,36 @@ export default {
         }
       }
       return {}
+    },
+    isAdmin() {
+      return this.$store.state.user.userInfo && this.$store.state.user.userInfo.isadmin === 'c'
     }
   },
-  mounted() {},
+  beforeMount() {
+    this.getTagsList()
+  },
   methods: {
+    cancel() {
+      this.article = JSON.parse(this.remember)
+      this.isEdit = false
+    },
+    async deleteMd() {
+      // 删除文章
+      // console.log(this.id, 'this.id this.id ')
+      const res = await this.$store.dispatch('acticle/daleteArticle', { id: this.id })
+      if (res.data > 0) {
+        this.$router.push('/')
+      }
+
+      // console.log(res)
+    },
+    /**
+     * 获取标签
+     */
+    async getTagsList() {
+      const res = await this.$store.dispatch('acticle/getTagsList', {})
+      this.tagsList = res.data.list
+    },
     changeIsEdit() {
       // 更改现在文章的状态
       this.isEdit = !this.isEdit
@@ -80,7 +125,7 @@ export default {
       }
     },
     //   保存当前的md文件
-    saveMd() {
+    async saveMd() {
       /* 这个文章应该有
        article: {
             8. id
@@ -93,7 +138,8 @@ export default {
             6. 点赞人
        },
        */
-      console.log(`文章的内容:${this.handbook}`)
+      const res = await this.$store.dispatch('acticle/updataArticle', { id: this.id, json: this.article })
+      this.remember = JSON.stringify(res.data.jsonMessage)
     }
   },
   head() {
@@ -117,11 +163,25 @@ export default {
     right: 100px;
     top: 50%;
     transform: translateY(-50%);
+    .btn-edit {
+      margin: 0 0 15px 0;
+      display: block;
+    }
   }
   .article-content {
     margin-top: 30px;
     /deep/ .v-note-wrapper {
       height: 100%;
+    }
+    .a-title {
+      margin: 0 0 10px 0;
+    }
+    .article-title {
+      margin: 0 10px 20px 0;
+      width: 300px;
+      .el-select {
+        width: 100%;
+      }
     }
   }
   #vcomments {
