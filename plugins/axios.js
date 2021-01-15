@@ -12,7 +12,7 @@ const getUserAuth = async ($axios, store) => {
 }
 
 export default function({ app, $axios, store }) {
-  $axios.defaults.baseURL = 'http://127.0.0.1:8000/' // env[process.env.NUXT_ENV_BUILD_ENV].ENV_API
+  $axios.defaults.baseURL = env[process.env.NUXT_ENV_BUILD_ENV].ENV_API
   $axios.defaults.withCredentials = true
   // $axios.defaults.headers.post.platform = 3 // 基本配置
   $axios.defaults.timeout = 30000
