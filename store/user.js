@@ -1,5 +1,5 @@
 export const state = () => ({
-  DB_NAME: 'cyctest',
+  DB_NAME: process.env.NODE_ENV === 'production' ? 'blog' : 'cyctest',
   isShowLogin: false,
   userInfo: {
     name: 'cyc',

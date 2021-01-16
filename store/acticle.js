@@ -1,6 +1,6 @@
 export const state = () => ({
   articleList: [],
-  DB_NAME: 'cyctest'
+  DB_NAME: process.env.NODE_ENV === 'production' ? 'blog' : 'cyctest'
 })
 
 export const mutations = {
