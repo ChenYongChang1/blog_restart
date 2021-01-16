@@ -145,7 +145,7 @@ export default {
       const res = await this.$store.dispatch('acticle/addArticle', article)
       if (res.code === 200) {
         this.$message.success('添加成功')
-        // this.$router.push(`/article-${res.data.id}`)
+        this.$router.push(`/article-${res.data.id}`)
       }
       this.$store.dispatch('acticle/addTags', { name: this.article.tags })
     },
