@@ -175,7 +175,15 @@ export default {
      */
     async urlToUploadFile() {
       const res = await this.$store.dispatch('acticle/getOtherBlogMd', { webUrl: this.webUrl })
-      this.article.handbook = res.data.content
+      this.article.handbook = await this.htmlToMarkdown(res.data.content)
+    },
+    /**
+     * 根据html转md
+     */
+    async htmlToMarkdown(content) {
+      // const html2md = require('html-to-md')
+      // console.log(await this.$htmlMd(content))
+      return await this.$htmlMd(content)
     },
     // 读取文件
     readMdFile(file) {

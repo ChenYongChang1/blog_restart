@@ -19,7 +19,6 @@
           </el-select>
         </div>
       </div>
-      <h1 v-else class="a-title">{{ article.title }}</h1>
       <mavon-editor v-model="article.handbook" :subfield="isEdit" preview-background="white" :default-open="!isEdit ? 'preview' : ''" :toolbars-flag="isEdit" :toolbars="markdownOption" @save="saveMd" />
     </article>
     <div>
