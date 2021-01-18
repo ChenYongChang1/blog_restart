@@ -162,12 +162,15 @@ export default {
     right: 100px;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 3;
     .btn-edit {
       margin: 0 0 15px 0;
       display: block;
     }
   }
   .article-content {
+    position: relative;
+    z-index: 1;
     margin-top: 30px;
     /deep/ .v-note-wrapper {
       height: 100%;
