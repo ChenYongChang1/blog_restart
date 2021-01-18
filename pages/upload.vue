@@ -39,9 +39,7 @@
 
 <script>
 export default {
-  fetch() {
-    this.getTagsList()
-  },
+  // fetch() {},
   data() {
     const _this = this
     return {
@@ -98,6 +96,7 @@ export default {
     }
   },
   mounted() {
+    this.getTagsList()
     this.getOssSign()
   },
   methods: {
@@ -143,11 +142,11 @@ export default {
         time: new Date().getTime()
       }
       const res = await this.$store.dispatch('acticle/addArticle', article)
+      this.$store.dispatch('acticle/addTags', { name: this.article.tags })
       if (res.code === 200) {
         this.$message.success('添加成功')
         this.$router.push(`/article-${res.data.id}`)
       }
-      this.$store.dispatch('acticle/addTags', { name: this.article.tags })
     },
     /**
      * 获取标签
