@@ -28,6 +28,7 @@
         </el-select>
       </div>
       <div class="article-title">
+        <el-button v-if="isAdmin && hasHtml" type="primary" @click="changeToMd">TO_MD</el-button>
         <el-button type="primary" @click="saveMdTodb">保存</el-button>
       </div>
     </div>
@@ -93,6 +94,14 @@ export default {
         count: 0,
         like: 0
       }
+    }
+  },
+  computed: {
+    isAdmin() {
+      return this.$store.state.user.userInfo && this.$store.state.user.userInfo.isadmin === 'c'
+    },
+    hasHtml() {
+      return this.article.handbook && (this.article.handbook.includes('<div') || this.article.handbook.includes('<p'))
     }
   },
   mounted() {
@@ -175,6 +184,12 @@ export default {
     async urlToUploadFile() {
       const res = await this.$store.dispatch('acticle/getOtherBlogMd', { webUrl: this.webUrl })
       this.article.handbook = await this.htmlToMarkdown(res.data.content)
+    },
+    /**
+     * html转md
+     */
+    async changeToMd() {
+      this.article.handbook = await this.htmlToMarkdown(this.article.handbook)
     },
     /**
      * 根据html转md
