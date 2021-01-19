@@ -22,7 +22,7 @@ export default {
   },
   mounted() {
     const agent = navigator.userAgent
-    let normalTitle = ''
+    // let normalTitle = ''
     this.$store.commit('user/SET_USER_INFO', { id: agent, name: 'custom' })
     document.onkeydown = (e) => {
       // 事件对象兼容
@@ -31,14 +31,14 @@ export default {
         this.$store.commit('user/SET_LOGIN', true)
       }
     }
-    document.addEventListener('visibilitychange', function() {
-      if (document.visibilityState === 'hidden') {
-        normalTitle = document.title
-        document.title = '不继续看会了？'
-      } else {
-        document.title = normalTitle
-      }
-    })
+    // document.addEventListener('visibilitychange', function() {
+    //   if (document.visibilityState === 'hidden') {
+    //     normalTitle = document.title
+    //     document.title = '不继续看会了？'
+    //   } else {
+    //     document.title = normalTitle
+    //   }
+    // })
   },
   methods: {}
 }
