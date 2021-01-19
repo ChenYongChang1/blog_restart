@@ -1,6 +1,6 @@
 <template>
   <div class="home-page d-content-center">
-    <blog-list :page="page"></blog-list>
+    <blog-list :page="page" :blog-table-list="blogTableList" :count="count"></blog-list>
   </div>
 </template>
 
@@ -8,9 +8,18 @@
 import BlogList from '@/components/page/home/BlogList'
 export default {
   components: { BlogList },
-  asyncData({ params, query, store }) {
-    const { page = 1 } = query
+  watchQuery: true,
+  async asyncData({ params, query, store }) {
+    const { page = 1, w = '' } = query
+    const queryJson = {}
+    if (w) {
+      queryJson.title = w
+    }
+    const res = await store.dispatch('acticle/getArticleList', { query: queryJson, page: parseInt(page) })
+    const { list, count } = res.data
     return {
+      blogTableList: list,
+      count,
       page: parseInt(page) || 1
     }
   },

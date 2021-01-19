@@ -51,6 +51,7 @@ export const actions = {
       pageSize: 10,
       order,
       remove,
+      queryType: query.title ? 1 : 0,
       jsonMessage: query
     })
     return res

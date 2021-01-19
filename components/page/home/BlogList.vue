@@ -10,30 +10,36 @@ import BlogItem from '@/components/page/home/BlogItem'
 export default {
   name: 'BlogList',
   components: { BlogItem },
+  watchQuery: true,
   props: {
     page: {
       type: Number,
       default: 1
+    },
+    count: {
+      type: Number,
+      default: 0
+    },
+    blogTableList: {
+      type: Array,
+      default: () => []
     }
   },
-  async fetch() {
-    await this.getArticleList()
+  fetch() {
+    // await this.getArticleList()
   },
   data() {
     return {
-      blogTableList: [],
-      count: 0
+      // blogTableList: [],
+      // count: 0
     }
   },
-  watch: {
-    '$route.query.page': '$fetch'
-  },
   methods: {
-    async getArticleList(query = {}) {
-      const res = await this.$store.dispatch('acticle/getArticleList', { query, page: this.page })
-      this.blogTableList = res.data.list
-      this.count = res.data.count
-    },
+    // async getArticleList(query = {}) {
+    //   const res = await this.$store.dispatch('acticle/getArticleList', { query, page: this.page })
+    //   this.blogTableList = res.data.list
+    //   this.count = res.data.count
+    // },
     currentChange(e) {
       console.log(e)
       this.$router.push(`?page=${e}`)
