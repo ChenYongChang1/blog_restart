@@ -22,6 +22,7 @@ export default {
   },
   mounted() {
     const agent = navigator.userAgent
+    let normalTitle = ''
     this.$store.commit('user/SET_USER_INFO', { id: agent, name: 'custom' })
     document.onkeydown = (e) => {
       // 事件对象兼容
@@ -30,6 +31,14 @@ export default {
         this.$store.commit('user/SET_LOGIN', true)
       }
     }
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'hidden') {
+        normalTitle = document.title
+        document.title = agent === 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36' ? '傻🐶张笑彬？' : '怎么？不学习会？'
+      } else {
+        document.title = normalTitle
+      }
+    })
   },
   methods: {}
 }
