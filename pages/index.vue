@@ -8,12 +8,22 @@
 import BlogList from '@/components/page/home/BlogList'
 export default {
   components: { BlogList },
-  watchQuery: true,
+  watchQuery: ['w', 'page'],
   async asyncData({ params, query, store }) {
     const { page = 1, w = '' } = query
     const queryJson = {}
     if (w) {
-      queryJson.title = w
+      queryJson.$or = [
+        {
+          title: `/${w}/`
+        },
+        {
+          desc: `/${w}/`
+        },
+        {
+          tags: `/${w}/`
+        }
+      ]
     }
     const res = await store.dispatch('acticle/getArticleList', { query: queryJson, page: parseInt(page) })
     const { list, count } = res.data
