@@ -4,7 +4,7 @@
       <div class="logo">
         <a href="/" class="d-block font-18" title="天天的博客">天天的博客</a>
       </div>
-      <div class="right-menu d-flex d-flex-end">
+      <div class="right-menu d-flex d-align-center d-flex-end">
         <div class="search-input" :class="{ 'show-search': isfocus }">
           <el-input v-model="word" placeholder=" 🔍 " @focus="isfocus = true" @blur="isfocus = false" @keyup.enter.native="searchArticle"></el-input>
         </div>
