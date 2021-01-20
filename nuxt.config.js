@@ -28,14 +28,14 @@ module.exports = {
       //   content: '前端程序猿'
       // }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [
-      {
-        type: 'text/javascript',
-        src: '/iconfont.js',
-        async: true
-      }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    // script: [
+    //   {
+    //     type: 'text/javascript',
+    //     src: '/iconfont.js',
+    //     async: true
+    //   }
+    // ]
   },
   render: {
     resourceHints: false
