@@ -12,21 +12,23 @@ export default {
   async asyncData({ params, query, store }) {
     const { page = 1, w = '' } = query
     const queryJson = {}
-    if (w) {
+    const word = decodeURIComponent(w)
+    if (word) {
       queryJson.$or = [
         {
-          title: `/${w}/`
+          title: `/${word}/`
         },
         {
-          desc: `/${w}/`
+          desc: `/${word}/`
         },
         {
-          tags: `/${w}/`
+          tags: `/${word}/`
         }
       ]
     }
     const res = await store.dispatch('acticle/getArticleList', { query: queryJson, page: parseInt(page) })
     const { list, count } = res.data
+    console.log(list)
     return {
       blogTableList: list,
       count,

@@ -29,7 +29,8 @@ export default {
   },
   methods: {
     searchArticle() {
-      this.$router.push('/', { w: encodeURIComponent(this.word) })
+      this.$router.push({ path: '/', query: { w: encodeURIComponent(this.word) } })
+      this.word = ''
     }
   }
 }
@@ -63,7 +64,7 @@ export default {
       }
     }
     .right-menu {
-      width: 400px;
+      width: 550px;
       .menu-item {
         padding: 0 10px;
         height: 48px;
@@ -76,7 +77,6 @@ export default {
     width: 25px;
     height: 20px;
     border-radius: 50%;
-    margin: auto;
     padding: 0;
     line-height: 20px;
     transition: all 0.3s;
