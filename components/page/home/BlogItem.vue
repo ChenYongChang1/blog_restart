@@ -6,7 +6,7 @@
     <div class="article-info">
       <span class="hide-sm">发表于</span>
       <time>{{ blogRow.time | formatDate('yyyy-MM-dd') }}</time> | <span class="hide-sm">分类于</span>
-      <a :href="`/tags/${blogRow.tags}`" :title="blogRow" class="hover-highlight">{{ blogRow.tags }}</a>
+      <a :href="`/tags/tag-${blogRow.tags}`" :title="blogRow" class="hover-highlight">{{ blogRow.tags }}</a>
     </div>
     <div class="article-desc">
       {{ blogRow.desc }}
