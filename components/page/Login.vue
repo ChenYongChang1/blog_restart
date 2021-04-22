@@ -32,7 +32,9 @@ export default {
       if (res.length) {
         this.$store.commit('user/SET_LOGIN', false)
       }
-      console.log(res)
+      // console.log(res[0] || {})
+      this.$cookies.set('user', res[0] || {}, { domain: this.$store.state.host, path: '/', maxAge: 60 * 60 * 24 * 90 })
+      // console.log(res)
     }
   }
 }
