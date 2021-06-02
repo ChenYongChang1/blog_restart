@@ -19,6 +19,7 @@
           </el-select>
         </div>
       </div>
+      <div class="article-h" v-html="article.handbook"></div>
       <mavon-editor v-model="article.handbook" :subfield="isEdit" preview-background="white" :default-open="!isEdit ? 'preview' : ''" :toolbars-flag="isEdit" :toolbars="markdownOption" @save="saveMd" />
     </article>
     <div>
@@ -157,6 +158,10 @@ export default {
 <style lang="scss" scoped>
 .article {
   min-height: calc(100vh - 170px);
+  .article-h {
+    position: absolute;
+    opacity: 0;
+  }
   .edit-article {
     position: fixed;
     right: 100px;
