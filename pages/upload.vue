@@ -173,9 +173,9 @@ export default {
     },
     async imgAdd(pos, $file) {
       //   添加图片
-      console.log(pos, $file)
+      // console.log(pos, $file)
       const url = await this.$store.dispatch('uploadImg', $file)
-      console.log(url)
+      // console.log(url)
       this.$refs['md-editor'].$img2Url(pos, url)
     },
     /**
@@ -183,7 +183,11 @@ export default {
      */
     async urlToUploadFile() {
       const res = await this.$store.dispatch('acticle/getOtherBlogMd', { webUrl: this.webUrl })
-      this.article.handbook = await this.htmlToMarkdown(res.data.content)
+      const { content, title, description, keywords } = res.data
+      this.article.handbook = await this.htmlToMarkdown(content)
+      this.article.title = title
+      this.article.desc = description
+      this.article.tags = keywords[0]
     },
     /**
      * html转md
