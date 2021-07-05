@@ -183,11 +183,11 @@ export default {
      */
     async urlToUploadFile() {
       const res = await this.$store.dispatch('acticle/getOtherBlogMd', { webUrl: this.webUrl })
-      const { content, title, description, keywords } = res.data
+      const { content, title = '', description = '', keywords = [] } = res.data
       this.article.handbook = await this.htmlToMarkdown(content)
       this.article.title = title
       this.article.desc = description
-      this.article.tags = keywords[0]
+      this.article.tags = keywords.length ? keywords[0] : ''
     },
     /**
      * html转md
