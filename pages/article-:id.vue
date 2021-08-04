@@ -19,7 +19,7 @@
           </el-select>
         </div>
       </div>
-      <div class="article-h" v-html="article.handbook"></div>
+      <div class="article-h" v-html="htmlArticle"></div>
       <mavon-editor v-model="article.handbook" :subfield="isEdit" preview-background="white" :default-open="!isEdit ? 'preview' : ''" :toolbars-flag="isEdit" :toolbars="markdownOption" @save="saveMd" />
     </article>
     <div>
@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import marked from 'marked'
 import CommentValine from '@/components/page/acticle/CommentValine'
 export default {
   components: { CommentValine },
@@ -38,11 +39,13 @@ export default {
     const { id } = params
     const res = await store.dispatch('acticle/getArticleList', { query: { id } })
     const article = res.data.list[0]
+    const htmlArticle = marked(article.handbook)
     const remember = JSON.stringify(article)
     return {
       id,
       article,
-      remember
+      remember,
+      htmlArticle
     }
   },
   data() {
@@ -95,6 +98,7 @@ export default {
   beforeMount() {
     this.getTagsList()
   },
+  mounted() {},
   methods: {
     cancel() {
       this.article = JSON.parse(this.remember)
