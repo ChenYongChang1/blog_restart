@@ -19,8 +19,8 @@
           </el-select>
         </div>
       </div>
-      <div class="article-h" v-html="htmlArticle"></div>
-      <mavon-editor v-model="article.handbook" :subfield="isEdit" preview-background="white" :default-open="!isEdit ? 'preview' : ''" :toolbars-flag="isEdit" :toolbars="markdownOption" @save="saveMd" />
+      <div v-if="!isEdit" class="article-h" v-html="htmlArticle"></div>
+      <mavon-editor v-else v-model="article.handbook" :subfield="isEdit" preview-background="white" :default-open="!isEdit ? 'preview' : ''" :toolbars-flag="isEdit" :toolbars="markdownOption" @save="saveMd" />
     </article>
     <div>
       <client-only>
@@ -42,6 +42,7 @@ export default {
     const htmlArticle = marked(article.handbook)
     const remember = JSON.stringify(article)
     return {
+      isEdit: false,
       id,
       article,
       remember,
@@ -50,7 +51,6 @@ export default {
   },
   data() {
     return {
-      isEdit: false,
       tagsList: []
     }
   },
@@ -163,8 +163,8 @@ export default {
 .article {
   min-height: calc(100vh - 170px);
   .article-h {
-    position: absolute;
-    opacity: 0;
+    // position: absolute;
+    // opacity: 0;
   }
   .edit-article {
     position: fixed;
@@ -181,6 +181,10 @@ export default {
     position: relative;
     z-index: 1;
     margin-top: 30px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.16);
+    background: white;
+    padding: 10px 20px;
     /deep/ .v-note-wrapper {
       height: 100%;
     }
