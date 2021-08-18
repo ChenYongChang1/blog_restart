@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     searchArticle() {
-      this.$router.push({ path: '/', query: { w: encodeURIComponent(this.word) } })
+      this.$router.push({ path: `/search-1-${encodeURIComponent(this.word)}` })
       this.word = ''
     }
   }

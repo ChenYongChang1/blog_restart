@@ -1,17 +1,23 @@
 <template>
   <div class="blog-list-box">
     <blog-item v-for="item in blogTableList" :key="`blog-${item.id}`" :blog-row="item"></blog-item>
-    <el-pagination background layout="prev, pager, next" :current-page="page" hide-on-single-page :total="count" @current-change="currentChange"> </el-pagination>
+    <dd-pagination background :url="`/search-{page}-${word || '‡'}`" layout="prev, pager, next" :current-page="page" :total="count" @current-change="currentChange"> </dd-pagination>
+    <!-- <div></div> -->
   </div>
 </template>
 
 <script>
 import BlogItem from '@/components/page/home/BlogItem'
+import DdPagination from '@/components/base/pagination/DdPagination'
 export default {
   name: 'BlogList',
-  components: { BlogItem },
+  components: { BlogItem, DdPagination },
   watchQuery: true,
   props: {
+    word: {
+      type: String,
+      default: ''
+    },
     page: {
       type: Number,
       default: 1
