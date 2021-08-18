@@ -30,12 +30,23 @@ export default {
     const { list, count } = res.data
     console.log(list)
     return {
+      word,
       blogTableList: list,
       count,
       page: parseInt(page) || 1
     }
   },
   head() {
+    if (this.word) {
+      const page = this.page ? `-第${this.page}页` : ''
+      return {
+        title: `【${this.word}】相关文章${page}-陈永昌的博客`,
+        meta: [
+          { hid: 'description', name: 'description', content: `陈永昌的博客提供${this.word}相关文章的技术分享学习` },
+          { name: 'keywords', content: '' }
+        ]
+      }
+    }
     return {
       title: `陈永昌的博客`,
       meta: [
