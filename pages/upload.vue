@@ -40,7 +40,10 @@
 
 <script>
 export default {
-  // fetch() {},
+  async fetch() {
+    const arr = [this.getTagsList(), this.getOssSign()]
+    await Promise.all(arr)
+  },
   data() {
     const _this = this
     return {
@@ -104,10 +107,7 @@ export default {
       return this.article.handbook && (this.article.handbook.includes('<div') || this.article.handbook.includes('<p'))
     }
   },
-  mounted() {
-    this.getTagsList()
-    this.getOssSign()
-  },
+  // mounted() {},
   methods: {
     checkTagsIsCreate() {
       // 判断tags是否是新建的
@@ -169,7 +169,7 @@ export default {
      */
     async getOssSign() {
       const res = await this.$store.dispatch('getOssSign')
-      console.log(res)
+      // console.log(res)
     },
     async imgAdd(pos, $file) {
       //   添加图片

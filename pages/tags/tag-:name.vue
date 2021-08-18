@@ -31,6 +31,15 @@ export default {
       artilceList,
       name
     }
+  },
+  head() {
+    return {
+      title: `天天提供【${this.name}】学习-前端学习-陈永昌的博客`,
+      meta: [
+        { hid: 'description', name: 'description', content: `陈永昌的博客更新提供【${this.name}】下的文章分类。` },
+        { name: 'keywords', content: this.name }
+      ]
+    }
   }
 }
 </script>

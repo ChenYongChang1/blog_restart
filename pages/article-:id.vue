@@ -152,7 +152,7 @@ export default {
       title: `【${title}】-${tags + ''}-陈永昌的博客`,
       meta: [
         { hid: 'description', name: 'description', content: `陈永昌的博客提供${tags + ''}学习-${desc}` },
-        { name: 'keywords', content: '' }
+        { name: 'keywords', content: `${tags + ''}` }
       ]
     }
   }

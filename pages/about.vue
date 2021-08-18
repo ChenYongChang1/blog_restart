@@ -26,14 +26,24 @@
       <h3>联系方式</h3>
       <div class="about_ct">
         <p>GitHub: <a class="d-theme-color" href="https://github.com/ChenYongChang1" target="_blank">@天天</a></p>
-        <p>邮箱: <a class="d-theme-color" href="mailto:645234650@qq.com" target="_blank">1759633997@qq.com</a></p>
+        <p>邮箱: <a class="d-theme-color" href="mailto:1759633997@qq.com" target="_blank">1759633997@qq.com</a></p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  head() {
+    return {
+      title: `关于天天-陈永昌的博客`,
+      meta: [
+        { hid: 'description', name: 'description', content: `陈永昌的博客提供技术分享、前端学习、vue、算法等学习` },
+        { name: 'keywords', content: '' }
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
