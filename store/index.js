@@ -14,6 +14,11 @@ export const mutations = {
 
 export const getters = {}
 export const actions = {
+  async getLogin({ commit }) {
+    const res = await this.$axios.post('http://106.14.212.56/api2/user/login/', { name: 'cyc', password: 'Asd12345!' })
+    commit('SET_ASSTOKEN', res.data.assToken)
+    return res.data.assToken
+  },
   async getOssSign({ commit }) {
     const res = await this.$axios.post('/add/sign', { dir: 'cyc-save' })
     commit('SET_OSSSIGN', res.data)

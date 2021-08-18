@@ -25,7 +25,17 @@ export default {
       tagsList: res.data.list || []
     }
   },
-  methods: {}
+  methods: {},
+  head() {
+    const list = this.tagsList.map((item) => item.name)
+    return {
+      title: `前端学习标签-陈永昌的博客`,
+      meta: [
+        { hid: 'description', name: 'description', content: `陈永昌的博客提供技术分享、前端学习、vue、算法等学习` },
+        { name: 'keywords', content: list + '' }
+      ]
+    }
+  }
 }
 </script>
 
