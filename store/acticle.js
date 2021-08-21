@@ -52,7 +52,9 @@ export const actions = {
       order,
       remove,
       queryType: query.title ? 1 : 0,
-      jsonMessage: query
+      jsonMessage: {
+        $and: [{ nshow: { $ne: true } }, query]
+      }
     })
     return res
   },
