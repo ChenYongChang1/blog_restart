@@ -148,13 +148,18 @@ export default {
         ...this.article,
         id: this.$randomString(16),
         user: this.$store.state.user.userInfo.id,
-        time: new Date().getTime()
+        time: new Date().getTime(),
+        nshow: this.isAdmin ? '' : true
       }
       const res = await this.$store.dispatch('acticle/addArticle', article)
       this.$store.dispatch('acticle/addTags', { name: this.article.tags })
       if (res.code === 200) {
-        this.$message.success('添加成功')
-        this.$router.push(`/article-${res.data.id}`)
+        if (this.isAdmin) {
+          this.$message.success('添加成功')
+          this.$router.push(`/article-${res.data.id}`)
+        } else {
+          this.$message.success('发布成功，正在等待审核。')
+        }
       }
     },
     /**
