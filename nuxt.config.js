@@ -28,14 +28,15 @@ module.exports = {
       //   content: '前端程序猿'
       // }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: 'http://sheep11.com/favicon.ico' }]
-    // script: [
-    //   {
-    //     type: 'text/javascript',
-    //     src: '/iconfont.js',
-    //     async: true
-    //   }
-    // ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: 'http://sheep11.com/favicon.ico' }],
+    script: [
+      {
+        type: 'text/javascript',
+        src: 'https://hm.baidu.com/hm.js?4b71b04f39a2b18f778517e3e2fa09e3',
+        async: true,
+        defer: true
+      }
+    ]
   },
   render: {
     resourceHints: false
