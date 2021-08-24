@@ -39,7 +39,13 @@ export default {
     const { id } = params
     const res = await store.dispatch('acticle/getArticleList', { query: { id } })
     const article = res.data.list[0]
-    const htmlArticle = marked(article.handbook)
+    const htmlArticle = marked(article.handbook).replace(/<a(.*?)>(.*?)<\/a>/g, (...args) => {
+      const flag = args[1].includes('sheep11.com')
+      if (!flag) {
+        return args[0].replace('<a', '<a rel="nofollow"')
+      }
+      return args[0]
+    })
     const remember = JSON.stringify(article)
     return {
       isEdit: false,
