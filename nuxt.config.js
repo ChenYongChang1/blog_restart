@@ -28,7 +28,7 @@ module.exports = {
       //   content: '前端程序猿'
       // }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: 'http://sheep11.com/favicon.ico' }]
     // script: [
     //   {
     //     type: 'text/javascript',
