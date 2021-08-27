@@ -17,7 +17,7 @@
     </div>
     <div class="d-flex">
       <div class="article-title">
-        <el-input v-model="article.title" placeholder="请输入文章的标题"></el-input>
+        <el-input v-model="article.title" placeholder="请输入文章的标题" @keydown.native.enter="getBaiduWord"></el-input>
       </div>
       <div class="article-title">
         <el-input v-model="article.desc" :autosize="{ minRows: 1, maxRows: 4 }" placeholder="请输入文章的描述"></el-input>
@@ -109,6 +109,10 @@ export default {
   },
   // mounted() {},
   methods: {
+    async getBaiduWord() {
+      const res = await this.$store.dispatch('getBaiduWords', { word: this.article.title })
+      this.article.title = res[0] ? res[0] + ',' + this.article.title : this.article.title
+    },
     checkTagsIsCreate() {
       // 判断tags是否是新建的
       const selectTags = this.tagsList.map((item) => item.name)
@@ -193,6 +197,7 @@ export default {
       this.article.title = title
       this.article.desc = description
       this.article.tags = keywords.length ? keywords[0] : ''
+      this.getBaiduWord()
     },
     /**
      * html转md

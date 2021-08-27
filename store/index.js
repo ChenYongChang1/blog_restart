@@ -22,7 +22,10 @@ export const actions = {
   async getOssSign({ commit }) {
     const res = await this.$axios.post('/add/sign', { dir: 'cyc-save' })
     commit('SET_OSSSIGN', res.data)
-    console.log(JSON.stringify(res.data))
+  },
+  async getBaiduWords({ commit }, opt = {}) {
+    const res = await this.$axios.get('/common/get_baidu_word?word=' + opt.word)
+    return res.data || []
   },
   async uploadImg({ state, commit, dispatch }, file) {
     if (!state.ossSign.accessid) {

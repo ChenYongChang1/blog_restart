@@ -32,9 +32,11 @@ export default function({ app, $axios, store }) {
   // 相应拦截器
   $axios.onResponse((res) => {
     if (res.status === 200) {
-      if (res.data.code !== 200 && !res.config.url.includes('cyc-save.oss-cn-shanghai.aliyuncs.com')) {
+      // console.log(res.config.url, 'res.config')
+      const whiteUrl = ['/common/get_baidu_word', 'cyc-save.oss-cn-shanghai.aliyuncs.com']
+      if (res.data.code !== 200 && !whiteUrl.some((item) => res.config.url.includes(item))) {
         // eslint-disable-next-line no-unused-expressions
-        console.log('接口请求出错', res, res.config.url.includes('cyc-save.oss-cn-shanghai.aliyuncs.com'))
+        console.log('接口请求出错', res.config.url)
         return Promise.reject(res.data)
       }
       return Promise.resolve(res.data)
