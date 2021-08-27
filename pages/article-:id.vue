@@ -21,14 +21,14 @@
       </div>
       <h1 class="d-text-center">{{ article.title }}</h1>
       <div v-if="!isEdit" class="article-h" v-html="htmlArticle"></div>
+      <div v-if="!isEdit" class="same-article">
+        <h2 class="same-title">{{ article.title }}的相似文章</h2>
+        <div class="article-list d-flex d-flex-warp">
+          <a v-for="item in sameList" :key="`same-${item.id}`" :title="item.title" :href="`/article-${item.id}`">{{ item.title }}分析</a>
+        </div>
+      </div>
       <mavon-editor v-else v-model="article.handbook" :subfield="isEdit" preview-background="white" :default-open="!isEdit ? 'preview' : ''" :toolbars-flag="isEdit" :toolbars="markdownOption" @save="saveMd" />
     </article>
-    <div class="same-article">
-      <h2 class="same-title">相识文章</h2>
-      <div class="article-list d-flex d-flex-warp">
-        <a v-for="item in sameList" :key="`same-${item.id}`" :href="`/article-${item.id}`">{{ item.title }}</a>
-      </div>
-    </div>
     <div>
       <client-only>
         <comment-valine></comment-valine>
@@ -178,13 +178,18 @@ export default {
 .article {
   min-height: calc(100vh - 170px);
   .same-article {
-    margin-top: 20px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: solid 1px $lineColor;
     .same-title {
       margin-bottom: 15px;
     }
     .article-list {
       margin-bottom: -10px;
       > a {
+        padding: 0 10px;
+        background: #f7f8fa;
+        border-radius: 4px;
         height: 20px;
         line-height: 20px;
         display: block;
