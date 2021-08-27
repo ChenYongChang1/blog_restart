@@ -19,9 +19,16 @@
           </el-select>
         </div>
       </div>
+      <h1 class="d-text-center">{{ article.title }}</h1>
       <div v-if="!isEdit" class="article-h" v-html="htmlArticle"></div>
       <mavon-editor v-else v-model="article.handbook" :subfield="isEdit" preview-background="white" :default-open="!isEdit ? 'preview' : ''" :toolbars-flag="isEdit" :toolbars="markdownOption" @save="saveMd" />
     </article>
+    <div class="same-article">
+      <h2 class="same-title">相识文章</h2>
+      <div class="article-list d-flex d-flex-warp">
+        <a v-for="item in sameList" :key="`same-${item.id}`" :href="`/article-${item.id}`">{{ item.title }}</a>
+      </div>
+    </div>
     <div>
       <client-only>
         <comment-valine></comment-valine>
@@ -39,6 +46,7 @@ export default {
     const { id } = params
     const res = await store.dispatch('acticle/getArticleList', { query: { id } })
     const article = res.data.list[0]
+    const same = await store.dispatch('acticle/getArticleList', { query: { tags: article.tags || '' }, pointer: ['id', 'title'] })
     const htmlArticle = marked(article.handbook).replace(/<a(.*?)>(.*?)<\/a>/g, (...args) => {
       const flag = args[1].includes('sheep11.com')
       if (!flag) {
@@ -50,6 +58,7 @@ export default {
     return {
       isEdit: false,
       id,
+      sameList: same.data.list.filter((item) => item.id !== article.id),
       article,
       remember,
       htmlArticle
@@ -168,6 +177,22 @@ export default {
 <style lang="scss" scoped>
 .article {
   min-height: calc(100vh - 170px);
+  .same-article {
+    margin-top: 20px;
+    .same-title {
+      margin-bottom: 15px;
+    }
+    .article-list {
+      margin-bottom: -10px;
+      > a {
+        height: 20px;
+        line-height: 20px;
+        display: block;
+        flex-shrink: 0;
+        margin: 0 10px 10px 0;
+      }
+    }
+  }
   .article-h {
     // position: absolute;
     // opacity: 0;

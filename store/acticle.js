@@ -42,7 +42,8 @@ export const actions = {
         orderBy: 'time',
         isDesc: -1
       },
-      remove
+      remove,
+      pointer
     } = opt
     const res = await this.$axios.post('/query/data', {
       db: state.DB_NAME,
@@ -50,10 +51,11 @@ export const actions = {
       page: notPage ? undefined : page,
       pageSize: 10,
       order,
-      remove,
+      [pointer ? 'pointer' : 'remove']: pointer || remove,
       queryType: query.title ? 1 : 0,
       jsonMessage: {
-        $and: [{ nshow: { $ne: true } }, query]
+        nshow: { $ne: true },
+        ...query
       }
     })
     return res
