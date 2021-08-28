@@ -208,7 +208,7 @@ export default {
   }
   .edit-article {
     position: fixed;
-    right: 100px;
+    right: 5vw;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
