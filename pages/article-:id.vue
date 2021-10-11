@@ -27,7 +27,7 @@
           <a v-for="item in sameList" :key="`same-${item.id}`" :title="item.title" :href="`/article-${item.id}`">{{ item.title }}分析</a>
         </div>
       </div>
-      <mavon-editor v-else v-model="article.handbook" :subfield="isEdit" preview-background="white" :default-open="!isEdit ? 'preview' : ''" :toolbars-flag="isEdit" :toolbars="markdownOption" @save="saveMd" />
+      <mavon-editor v-else ref="md-editor" v-model="article.handbook" :subfield="isEdit" preview-background="white" :default-open="!isEdit ? 'preview' : ''" :toolbars-flag="isEdit" :toolbars="markdownOption" @imgAdd="imgAdd" @save="saveMd" />
     </article>
     <div>
       <client-only>
@@ -146,6 +146,13 @@ export default {
       if (!this.isEdit) {
         this.saveMd()
       }
+    },
+    async imgAdd(pos, $file) {
+      //   添加图片
+      // console.log(pos, $file)
+      const url = await this.$store.dispatch('uploadImg', $file)
+      // console.log(url)
+      this.$refs['md-editor'].$img2Url(pos, url)
     },
     //   保存当前的md文件
     async saveMd() {
