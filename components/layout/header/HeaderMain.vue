@@ -53,6 +53,7 @@ export default {
         height: 38px;
         line-height: 38px;
         color: $baseFontColor;
+        word-break: keep-all;
       }
       &:before,
       &:after {
