@@ -29,7 +29,7 @@ function merge_branch()
 {
     if git checkout $1 && pull_latest_branch $1 && git merge $2
     then
-        echo '合并成功'
+        echo $1 合并 $2 成功
         last_status
     fi
 }
@@ -98,3 +98,5 @@ fi
 pull_merge "$commitType($modal): $commitMsg" $commitBrand $currBranch
 
 merge_branch $currBranch $commitBrand
+
+push_branch $currBranch
