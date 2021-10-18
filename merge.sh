@@ -99,7 +99,8 @@ echo "$commitType($modal): $commitMsg" $commitBrand $currBranch
 
 pull_merge "$commitType($modal): $commitMsg" $commitBrand $currBranch
 
-# merge_branch $currBranch $commitBrand
+merge_branch $currBranch $commitBrand
+
 # branch=`git branch | grep "*"`
 # # 截取分支名
 # currBranch=${branch:2}
