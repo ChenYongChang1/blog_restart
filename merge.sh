@@ -95,36 +95,6 @@ if [[ "$commitBrand" == "?" ]];then
     fi
 fi
 
-echo "$commitType($modal): $commitMsg" $commitBrand $currBranch
-
 pull_merge "$commitType($modal): $commitMsg" $commitBrand $currBranch
 
 merge_branch $currBranch $commitBrand
-
-# branch=`git branch | grep "*"`
-# # 截取分支名
-# currBranch=${branch:2}
-
-# commitType=${1:-''}
-# commitMsg=${2:-''}
-# modal=${3:-'模块'}
-# commitBrand=${4:-'?'}
-# if [[ "$commitBrand" == "?" ]];then
-#     if [[ $currBranch == *hotfix-* ]];then
-#         commitBrand=${2:-'test'}
-#     else
-#         echo ''
-#         # git pull origin
-#         commitBrand=${2:-'dev'}
-#     fi
-# else
-#     echo ''
-# fi
-
-# echo $commitType $commitMsg $modal $commitBrand
-# git add .
-# git commit -m "$commitType($modal): $commitMsg"
-# git checkout $commitBrand
-# git merge $currBranch
-# git push origin
-# git checkout $currBranch
