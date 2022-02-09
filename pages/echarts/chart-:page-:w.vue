@@ -50,6 +50,15 @@ export default {
     search() {
       this.$goPath(`/echarts/chart-1-${this.searchWord || '‡'}`)
     }
+  },
+  head() {
+    return {
+      title: `echarts图例配置项大全${this.page === 1 ? '' : `第${this.page}页`}-陈永昌的博客`,
+      meta: [
+        { hid: 'description', name: 'description', content: `陈永昌的博客提供echarts分享大全，vue echarts图例配置项，Echarts Make A Pie已关闭` },
+        { name: 'keywords', content: `echarts` }
+      ]
+    }
   }
 }
 </script>

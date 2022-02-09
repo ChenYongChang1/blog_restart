@@ -60,6 +60,7 @@ export default {
     /deep/ .el-textarea__inner {
       width: 100%;
       height: 100%;
+      resize: none;
     }
   }
   .width-50 {
