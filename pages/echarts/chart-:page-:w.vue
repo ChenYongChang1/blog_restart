@@ -8,7 +8,7 @@
         <img class="d-img d-img-cover" :src="item.img" alt="" />
         <a :href="`/echarts/e-${item.id}`" :title="item.title" class="href" @click.stop>{{ item.title }}</a>
       </div>
-      <dd-pagination background :url="`chart-{page}-${word || '‡'}`" layout="prev, pager, next" :current-page="page" :total="count"> </dd-pagination>
+      <dd-pagination background :url="`/echarts/chart-{page}-${word || '‡'}`" layout="prev, pager, next" :current-page="page" :total="count"> </dd-pagination>
     </div>
   </div>
 </template>
