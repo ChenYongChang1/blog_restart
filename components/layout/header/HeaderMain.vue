@@ -10,7 +10,7 @@
         </div>
         <a title="标签" href="/tags" class="menu-item d-block font-16 d-hover-bg d-radius-4">标签</a>
         <a title="归档" href="/history" class="menu-item d-block font-16 d-hover-bg d-radius-4">归档</a>
-        <!-- <a title="项目" href="/demo" class="menu-item d-block font-16 d-hover-bg d-radius-4">项目</a> -->
+        <a title="echarts" href="/echarts" class="menu-item d-block font-16 d-hover-bg d-radius-4">图表</a>
         <a title="github" href="https://github.com/ChenYongChang1" target="_blank" rel="nofollow" class="menu-item d-block font-16 d-hover-bg d-radius-4">github</a>
         <a title="关于我" href="/about" class="menu-item d-block font-16 d-hover-bg d-radius-4">关于</a>
         <a title="上传博客" href="/upload" class="menu-item d-block font-16 d-hover-bg d-radius-4">上传</a>
