@@ -24,7 +24,7 @@ export default {
     },
     total: {
       type: Number,
-      default: 350
+      default: 0
     },
     pageSize: {
       type: Number,

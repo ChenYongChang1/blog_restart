@@ -15,7 +15,7 @@ export const actions = {
     const res = await this.$axios.post('/query/data', {
       db: state.DB_NAME,
       table: 'echarts',
-      page,
+      page: parseInt(page),
       pageSize: 10,
       pointer: ['id', 'title', 'img'],
       jsonMessage: {
