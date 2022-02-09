@@ -35,6 +35,8 @@ export default {
       if (!this.strOptions) {
         return {}
       }
+      // eslint-disable-next-line no-var
+      var echarts = this.$echarts
       const evStr = `(()=>{
           var option = ''
             ${this.strOptions}

@@ -1,7 +1,9 @@
 <template>
   <div>
     {{ echarts.title }}
-    <cc-echart :options="echarts.code"></cc-echart>
+    <client-only>
+      <cc-echart :options="echarts.code"></cc-echart>
+    </client-only>
   </div>
 </template>
 
@@ -13,7 +15,7 @@ export default {
   async asyncData({ isDev, route, store, env, params, app }) {
     const { id } = params
     const res = await store.dispatch('echarts/getEchartsOptions', { query: { id } })
-    const echarts = app.$get(res, 'data.list.0')
+    const echarts = app.$get(res, 'data.list.0', {})
     return {
       id,
       echarts
