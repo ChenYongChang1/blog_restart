@@ -4,7 +4,7 @@
       <el-input v-model="searchWord" style="" placeholder="搜索" @keydown.native.enter="search"></el-input>
     </div>
     <div class="echarts-box d-flex d-flex-warp">
-      <div v-for="(item, index) in list" :key="`echarts-${index}`" class="echart-row">
+      <div v-for="(item, index) in list" :key="`echarts-${index}`" class="echart-row d-pointer" @click="linkDetail(item.id)">
         <img class="d-img d-img-cover" :src="item.img" alt="" />
         <a :href="`/echarts/e-${item.id}`" :title="item.title" class="href" @click.stop>{{ item.title }}</a>
       </div>
@@ -44,6 +44,9 @@ export default {
     }
   },
   methods: {
+    linkDetail(id) {
+      this.$goPath(`/echarts/e-${id}`)
+    },
     search() {
       this.$goPath(`/echarts/chart-1-${this.searchWord || '‡'}`)
     }
