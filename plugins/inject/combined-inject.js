@@ -23,7 +23,19 @@ export function dateSeats(str) {
   }
   return str
 }
+const getDataParams = (obj, a = null, none) => {
+  if (a === null) {
+    throw new Error(`custom get function miss params`)
+  }
+  a = (a + '').split('.')
+  return a.reduce((data, item) => {
+    return (data || '')[item] || none
+  }, obj)
+}
 export default ({ app, route, $dayjs }, inject) => {
+  inject('get', (obj, str, none) => {
+    return getDataParams(obj, str, none)
+  })
   /**
    * 按照规则排序
    */

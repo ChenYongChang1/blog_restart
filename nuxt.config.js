@@ -57,6 +57,7 @@ module.exports = {
     // '@/plugins/dayjs',
     { src: '@/plugins/inject/combined-inject', ssr: true },
     // { src: '@/plugins/chart/vCharts', ssr: false },
+    { src: '@/plugins/UI/echarts', ssr: false },
     { src: '@/plugins/UI/element-ui', ssr: true },
     { src: '@/plugins/inject/vue-inject', ssr: false },
     { src: '@/plugins/filter', ssr: true },
