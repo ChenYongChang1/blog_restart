@@ -4,7 +4,7 @@
       <el-input v-model="strOptions" type="textarea" placeholder=""></el-input>
     </div>
     <div class="width-50">
-      <client-only>
+      <client-only v-if="echartOptions">
         <echarts v-bind="$attrs" :options="echartOptions"></echarts>
       </client-only>
     </div>
@@ -37,15 +37,28 @@ export default {
       }
       // eslint-disable-next-line no-var
       var echarts = this.$echarts
-      const evStr = `(()=>{
+      // eslint-disable-next-line no-var
+      var myChart = {
+        getWidth() {
+          return '100%'
+        },
+        getHeight() {
+          return '100%'
+        }
+      }
+      try {
+        const evStr = `(()=>{
           var option = ''
             ${this.strOptions}
             return option
         })()`
-      // eslint-disable-next-line no-eval
-      const options = eval(evStr)
-      // eslint-disable-next-line no-undef
-      return options
+        // eslint-disable-next-line no-eval
+        const options = eval(evStr)
+        // eslint-disable-next-line no-undef
+        return options
+      } catch (e) {
+        return false
+      }
     }
   }
 }
