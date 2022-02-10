@@ -14,10 +14,10 @@ export const actions = {
     const { query = {}, page = 1 } = opt
     const res = await this.$axios.post('/query/data', {
       db: state.DB_NAME,
-      table: 'echarts',
+      table: 'echartslist',
       page: parseInt(page),
       pageSize: 10,
-      pointer: ['id', 'title', 'img'],
+      pointer: ['id', 'title', 'img', 'description', 'tag'],
       jsonMessage: {
         nshow: { $ne: true },
         ...query
@@ -32,7 +32,7 @@ export const actions = {
     const { query = {} } = opt
     const res = await this.$axios.post('/query/data', {
       db: state.DB_NAME,
-      table: 'echarts',
+      table: 'echartslist',
       jsonMessage: {
         nshow: { $ne: true },
         ...query
