@@ -15,7 +15,7 @@ export const mutations = {
 export const getters = {}
 export const actions = {
   async getLogin({ commit }) {
-    const res = await this.$axios.post('http://106.14.212.56/api2/user/login/', { name: 'cyc', password: 'Asd12345!' })
+    const res = await this.$axios.post('http://120.79.76.92/api2/user/login/', { name: 'cyc', password: 'Asd12345!' })
     commit('SET_ASSTOKEN', res.data.assToken)
     return res.data.assToken
   },
