@@ -64,13 +64,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .box-echarts {
   width: 100%;
   .el-textarea {
     width: 100%;
     height: 100vh;
-    /deep/ .el-textarea__inner {
+     .el-textarea__inner {
       width: 100%;
       height: 100%;
       resize: none;

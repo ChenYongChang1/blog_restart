@@ -26,14 +26,14 @@
 
 /** element 搜索样式修改 */
 .dd-element-input {
-  /deep/ .el-input__inner {
+  .el-input__inner {
     border-radius: 15px;
     background: $bodyBg;
   }
 }
 /** element-tab标签样式重写 */
 .dd-tabs-reset {
-  /deep/ .el-tabs__header {
+  .el-tabs__header {
     background-color: #fff;
     border-bottom: 1px solid $themeColor !important;
     .el-tabs__nav {
@@ -84,7 +84,7 @@
 }
 
 .dd-gray-input {
-  /deep/ .el-input--mini .el-input__inner {
+  .el-input--mini .el-input__inner {
     background: #ebecf0;
     border-radius: 0 18px 18px 0;
     border-left: 1px solid #d5d7df;
@@ -112,7 +112,7 @@
     }
   }
 
-  /deep/ .el-input-group__append,
+  .el-input-group__append,
   .el-input-group__prepend {
     background-color: #ebecf0;
     color: $baseFontColor;
