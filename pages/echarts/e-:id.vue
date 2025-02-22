@@ -18,6 +18,16 @@
     <client-only>
       <cc-echart :options="echarts.code"></cc-echart>
     </client-only>
+    <div class="config">
+      <div v-for="(item, index) in configList" :key="`echarts-${index}`" class="echarts-item">
+        <div class="config-title">基础配置项：{{ item.title.split('option_')[1] }}</div>
+        <div class="config-desc">
+          <div v-for="(citem, cIndex) in parseJSON(item.config)" :key="`citem-${cIndex}`">
+            <div v-if="parseJSON(item.config, true)[citem]" v-html="parseJSON(item.config, true)[citem].desc"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="like-about">
       <h2>相似echarts图例：</h2>
       <div class="d-flex d-flex-warp">
@@ -37,6 +47,26 @@ export default {
     const { id } = params
     const res = await store.dispatch('echarts/getEchartsOptions', { query: { id } })
     const echarts = app.$get(res, 'data.list.0', {})
+    const searchs = {
+      $or: [
+        {
+          title: `/series_${echarts.tag}/`
+        },
+        {
+          title: `/option_xAxis/`
+        },
+        {
+          title: `/option_yAxis/`
+        },
+        {
+          title: `/option_legend/`
+        }
+      ]
+    }
+    const optData = await store.dispatch('echarts/getEchartsBaseOptions', { query: searchs })
+    // console.log(optData, 'optData')
+    const configList = app.$get(optData, 'data.list')
+    // console.log(config, 'config')
     // const
     const wordMap = {
       折线: 'line',
@@ -61,6 +91,7 @@ export default {
     const like = await store.dispatch('echarts/getEchartsList', { query: queryJson })
     const list = app.$get(like, 'data.list')
     return {
+      configList,
       likeList: list.filter((item) => item.id !== id),
       strwordMap,
       showcode: true,
@@ -72,6 +103,14 @@ export default {
     this.$nextTick(() => {
       this.showcode = false
     })
+  },
+  methods: {
+    parseJSON(config, keys = false) {
+      if (!keys) {
+        return Object.keys(JSON.parse(config))
+      }
+      return JSON.parse(config)
+    }
   },
   head() {
     const { title, tag, description } = this.echarts
@@ -95,6 +134,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.config {
+  width: 100%;
+  .echarts-item {
+    width: 100%;
+    margin-bottom: 20px;
+    .config-title {
+      height: 30px;
+      line-height: 30px;
+      font-size: 16px;
+    }
+  }
+}
 .like-about {
   width: 100%;
   margin: 20px 0;
