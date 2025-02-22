@@ -6,7 +6,7 @@ import { Message } from 'element-ui'
 import env from '@/env'
 
 const getUserAuth = async ($axios, store) => {
-  const res = await $axios.post('http://120.79.76.92/api2/user/login/', { name: 'cyc', password: 'Asd12345!' })
+  const res = await $axios.post('http://120.55.96.72/api2/user/login/', { name: 'cyc', password: 'Asd12345!' })
   store.commit('SET_ASSTOKEN', res.data.assToken)
   return res.data.assToken
 }
@@ -19,7 +19,7 @@ export default function({ app, $axios, store }) {
   // 请求拦截器
   $axios.onRequest(async (config) => {
     console.log('Making request to ', config.url)
-    if (!store.state.assToken && config.url !== 'http://120.79.76.92/api2/user/login/') {
+    if (!store.state.assToken && config.url !== 'http://120.55.96.72/api2/user/login/') {
       const assToken = await getUserAuth($axios, store)
       config.headers.assToken = assToken
     } else {
