@@ -83,8 +83,8 @@ export default {
     line-height: 20px;
     transition: all 0.3s;
     text-align: center;
-    /deep/ .el-input,
-    /deep/ .el-input__inner {
+    ::v-deep .el-input,
+    ::v-deep .el-input__inner {
       width: 100%;
       height: 100%;
       line-height: inherit;
@@ -98,7 +98,7 @@ export default {
     border-radius: 4px;
     text-align: left;
     background: white;
-    /deep/ .el-input__inner {
+    ::v-deep .el-input__inner {
       padding: 0 10px;
     }
   }

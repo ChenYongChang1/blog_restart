@@ -119,7 +119,7 @@ input {
   border: solid 1px $lineColor;
 }
 #vcomments {
-  /deep/ .vwrap {
+  ::v-deep .vwrap {
     background: $moduleBg;
   }
 }

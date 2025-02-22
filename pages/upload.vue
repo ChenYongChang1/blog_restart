@@ -260,13 +260,13 @@ export default {
       > .el-button {
         border-radius: 4px;
       }
-      /deep/ .el-input__inner {
+      ::v-deep .el-input__inner {
         width: 0;
         padding: 0 0;
         border-radius: 0 4px 4px 0;
         transition: all 0.2s ease;
       }
-      // &:hover /deep/ .el-input__inner {
+      // &:hover ::v-deep .el-input__inner {
       //   width: 300px;
       //   padding: 0 15px;
       // }
@@ -275,7 +275,7 @@ export default {
       > .el-button {
         border-radius: 4px 0 0 4px;
       }
-      /deep/ .el-input__inner {
+      ::v-deep .el-input__inner {
         width: 300px;
         padding: 0 15px;
       }
@@ -290,7 +290,7 @@ export default {
   }
   .editor {
     min-height: 600px;
-    /deep/ .v-note-wrapper {
+    ::v-deep .v-note-wrapper {
       min-height: 600px;
       height: 100%;
     }

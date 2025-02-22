@@ -232,7 +232,7 @@ export default {
     box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.16);
     background: white;
     padding: 10px 20px;
-    /deep/ .v-note-wrapper {
+    ::v-deep .v-note-wrapper {
       height: 100%;
     }
     .a-title {
@@ -248,7 +248,7 @@ export default {
   }
   #vcomments {
     margin-top: 50px;
-    /deep/ .vwrap {
+    ::v-deep .vwrap {
       background: $moduleBg;
     }
   }
