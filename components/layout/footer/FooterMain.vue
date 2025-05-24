@@ -4,6 +4,7 @@
       <p>世人的悲欢并不相通，我只是觉得他们吵闹。</p>
     </div>
     <div class="record d-text-center font-12">
+      <a href="https://beian.mps.gov.cn/#/query/webSearch?code=32058302005157" rel="noreferrer" target="_blank">苏公网安备32058302005157号</a>
       <a href="https://beian.miit.gov.cn/#/Integrated/index" rel="nofollow" target="_blank">{{ copyright }}</a>
       丨Copyright © 2021 chenyongchang.All Rights Reserved
     </div>
